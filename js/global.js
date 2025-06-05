@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // CSS tambahan untuk cursor ketik (jika efek ketik aktif)
-    // Moved to global.js as it's a general style utility
     const style = document.createElement('style');
     style.innerHTML = `
         .typing-cursor {
@@ -85,33 +84,5 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Skill Bar Animation (moved from about.js for potential global use if needed)
-    const skillProgressBars = document.querySelectorAll('.progress-bar'); // More generic selector
-
-    const animateSkillBar = (bar) => {
-        const targetWidth = bar.getAttribute('aria-valuenow') + '%';
-        // Animation is now primarily handled by CSS transition after width is set
-        // Ensure initial width is 0% (can be set in CSS or here)
-        // bar.style.width = '0%'; // Already set in CSS
-
-        // Trigger reflow to restart animation if already visible (not needed with IntersectionObserver once:true)
-        // void bar.offsetWidth;
-
-        bar.style.width = targetWidth;
-    };
-
-    if (skillProgressBars.length > 0) {
-        const skillObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateSkillBar(entry.target);
-                    observer.unobserve(entry.target); // Animate only once
-                }
-            });
-        }, { threshold: 0.3, rootMargin: "0px 0px -50px 0px" }); // Trigger when 30% visible or 50px from bottom
-
-        skillProgressBars.forEach(bar => {
-            skillObserver.observe(bar);
-        });
-    }
+    // Skill Bar Animation logic removed as progress bars are no longer used.
 });

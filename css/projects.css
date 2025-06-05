@@ -44,7 +44,7 @@
     justify-content: center;
     opacity: 0;
     transition: opacity var(--transition-speed) var(--transition-easing);
-    border-top-left-radius: 12px;
+    border-top-left-radius: 12px; /* Match card rounding */
     border-top-right-radius: 12px;
     text-align: center;
     padding: 1rem;
@@ -156,7 +156,8 @@
     font-weight: 500;
     text-transform: none !important; /* Override global uppercase for this specific button if desired */
 }
-.project-github-link i.bi-github {
+.project-github-link i.bi-github,
+.project-github-link i.bi-link-45deg { /* Added for consistency if other icons are used */
     margin-right: 0.5rem; /* Space between icon and text */
     font-size: 1.2rem; /* Slightly larger GitHub icon */
 }

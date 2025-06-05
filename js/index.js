@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const typingSpeed = 110; // Kecepatan mengetik nama
         const prefixTypingSpeed = 75; // Kecepatan mengetik prefix
 
-        // Buat elemen span untuk kursor
         const cursorSpan = document.createElement('span');
         cursorSpan.className = 'typing-cursor';
 
@@ -21,27 +20,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 prefixCharIndex++;
                 setTimeout(typePrefix, prefixTypingSpeed);
             } else {
-                // Setelah prefix selesai diketik, langsung mulai mengetik nama.
-                // Kursor tidak akan ditambahkan di sini.
-                setTimeout(typeName, 200); // Jeda singkat sebelum nama muncul
+                setTimeout(typeName, 200); 
             }
         }
         
         function typeName() {
             if (charIndex < name.length) {
-                // Sembunyikan kursor jika ada saat nama sedang diketik (untuk menghindari kursor ganda jika ada)
-                // Namun, dalam kasus ini, kita hanya menambahkan kursor di akhir.
                 typedTextElement.textContent += name.charAt(charIndex);
                 charIndex++;
                 setTimeout(typeName, typingSpeed);
             } else {
-                // Setelah nama selesai diketik, tambahkan kursor di paling akhir.
-                // Kursor akan muncul setelah nama "Syida".
                 typedTextElement.insertAdjacentElement('afterend', cursorSpan);
             }
         }
         
-        // Mulai animasi ketik untuk prefix terlebih dahulu
         typePrefix();
     }
+
+    // Logika untuk "More" button dihapus karena section terkait dihapus
 });
