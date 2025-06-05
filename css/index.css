@@ -237,9 +237,7 @@
     .skill-tool-name {
         font-size: 0.75rem;
     }
-    .cta-section {
-        /* padding handled by global.css section.cta-section */
-    }
+    
     .cta-section h2 {
         font-size: 1.8rem;
     }
