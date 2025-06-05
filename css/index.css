@@ -1,0 +1,246 @@
+/* Hero Section (index.html) */
+.hero-section {
+    min-height: 95vh; /* Slightly less than full viewport height */
+    background: var(--secondary-gradient);
+    background-size: 250% 250%; /* Larger size for smoother gradient animation */
+    animation: gradientBackground 20s ease infinite; /* Slower animation */
+    color: var(--dark-text);
+    position: relative;
+    overflow: hidden; /* Prevent any overflow from pseudo-elements */
+}
+
+/* Optional: Add subtle shapes or patterns to hero */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 200px;
+    height: 200px;
+    background: rgba(var(--sage-green-rgb), 0.1);
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.7;
+    animation: floatShape 15s ease-in-out infinite alternate;
+}
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    background: rgba(var(--sage-green-rgb), 0.15);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Blob shape */
+    filter: blur(40px);
+    opacity: 0.8;
+    animation: floatShapeReverse 18s ease-in-out infinite alternate;
+}
+
+@keyframes floatShape {
+    0% { transform: translateY(0px) translateX(0px) scale(1); }
+    50% { transform: translateY(-30px) translateX(20px) scale(1.1); }
+    100% { transform: translateY(0px) translateX(0px) scale(1); }
+}
+@keyframes floatShapeReverse {
+    0% { transform: translateY(0px) translateX(0px) scale(1.1); }
+    50% { transform: translateY(25px) translateX(-15px) scale(1); }
+    100% { transform: translateY(0px) translateX(0px) scale(1.1); }
+}
+
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-title {
+    font-size: 3.8rem; /* Increased size */
+    font-weight: 700; /* Bolder */
+    margin-bottom: 1.2rem;
+    color: var(--dark-text); /* Ensured dark text for contrast */
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.2); /* Subtle light shadow if background is darker */
+}
+.hero-subtitle {
+    font-size: 1.4rem; /* Increased size */
+    color: var(--muted-text); /* Using muted text color for better hierarchy */
+    max-width: 650px; /* Wider */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8; /* More spacing for subtitle */
+}
+#typed-text-prefix {
+    font-weight: 400; /* Slightly bolder prefix */
+}
+#typed-text {
+    font-weight: 700; /* Ensure name is bold */
+    color: var(--sage-green-darker); /* Accent color for name */
+}
+
+
+/* Quick About Section (index.html) */
+.profile-img-home {
+    border: 6px solid rgba(var(--sage-green-rgb), 0.3); /* Thicker, softer border */
+    transition: transform var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing), border-color var(--transition-speed) var(--transition-easing);
+    width: 320px; /* Slightly larger */
+    height: 320px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px var(--shadow-color); /* Initial shadow */
+}
+.profile-img-home:hover {
+    transform: scale(1.07) rotate(2deg); /* More dynamic hover */
+    box-shadow: 0 12px 35px var(--shadow-color-hover), 0 0 0 10px rgba(var(--sage-green-rgb), 0.1); /* Glow effect */
+    border-color: rgba(var(--sage-green-rgb), 0.5);
+}
+
+/* Service Cards (index.html) */
+.service-card {
+    border: none;
+    border-radius: 12px; /* More rounded */
+    box-shadow: 0 6px 25px var(--shadow-color);
+    transition: transform var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing);
+    background: var(--white);
+}
+.service-card:hover {
+    transform: translateY(-12px) scale(1.02); /* Lift and slightly scale */
+    box-shadow: 0 12px 35px var(--shadow-color-hover);
+}
+.service-card .icon-circle {
+    width: 75px; /* Larger icon circle */
+    height: 75px;
+    background: var(--light-sage-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-speed) var(--transition-easing), transform var(--transition-speed) var(--transition-easing);
+}
+.service-card:hover .icon-circle {
+    background: var(--sage-green);
+    transform: scale(1.1) rotate(10deg); /* Icon circle animation */
+}
+.service-card .icon-circle svg {
+    color: var(--sage-green-darker);
+    transition: color var(--transition-speed) var(--transition-easing), transform var(--transition-speed) var(--transition-easing);
+    width: 36px; /* Larger icons */
+    height: 36px;
+}
+.service-card:hover .icon-circle svg {
+    color: var(--white);
+    transform: scale(0.9); /* Icon slightly shrinks to fit rotated circle */
+}
+.service-card .card-title {
+    margin-top: 1.2rem;
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 1.25rem; /* Slightly larger card titles */
+}
+.service-card .card-text {
+    font-size: 0.95rem; /* Standardize card text size */
+}
+
+
+/* CTA Section (index.html) */
+.cta-section {
+    background: var(--primary-gradient);
+    background-size: 200% 200%;
+    animation: gradientBackground 15s ease infinite alternate;
+    padding: 4.5rem 1rem; /* Adjusted padding */
+    border-radius: 12px; /* Consistent rounding */
+    margin: 2.5rem auto; /* Consistent margin */
+    max-width: calc(100% - 2rem); /* Ensure some spacing on small screens */
+    position: relative;
+    overflow: hidden;
+}
+.cta-section::before { /* Decorative element */
+    content: " ";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    opacity: 0.8;
+    filter: blur(30px);
+}
+
+section.cta-section { /* Global padding already handled */ }
+
+.cta-section h2 {
+    color: var(--white);
+    font-size: 2.5rem; /* Larger CTA heading */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.cta-section p {
+    color: rgba(255, 255, 255, 0.95); /* More opaque text */
+    font-size: 1.2rem; /* Larger CTA paragraph */
+}
+
+
+/* Responsif Index */
+@media (max-width: 991.98px) {
+    .hero-title {
+        font-size: 2.8rem !important; /* Ensure override */
+    }
+    .hero-subtitle {
+        font-size: 1.2rem !important;
+    }
+    .profile-img-home {
+        width: 280px;
+        height: 280px;
+    }
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+    .cta-section p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        min-height: 80vh; /* Adjusted for mobile */
+    }
+    .hero-title {
+        font-size: 2.2rem !important;
+    }
+    .hero-subtitle {
+        font-size: 1rem !important;
+        max-width: 90%;
+    }
+    .profile-img-home {
+        width: 220px; /* Smaller on mobile */
+        height: 220px;
+        margin-bottom: 1rem; /* Space below image if text wraps */
+    }
+     .service-card {
+        margin-bottom: 1.5rem; /* Ensure spacing between cards on mobile stack */
+    }
+    .service-card .icon-circle {
+        width: 65px;
+        height: 65px;
+    }
+    .service-card .icon-circle svg {
+        width: 30px;
+        height: 30px;
+    }
+    .cta-section {
+        padding: 3.5rem 1rem;
+    }
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+    .cta-section p {
+        font-size: 1rem;
+    }
+    .hero-section .btn-custom-primary, .hero-section .btn-custom-secondary {
+        margin-bottom: 0.5rem; /* Stack buttons better on mobile */
+        width: auto; /* Allow buttons to size naturally or set to 100% if preferred */
+        display: inline-block; /* Ensure they don't take full width by default if stacked */
+    }
+     .hero-section .btn-custom-secondary.ms-md-3 {
+        margin-left: 0 !important; /* Remove margin for mobile stacking */
+    }
+}

@@ -1,0 +1,343 @@
+/* Variabel Warna Utama */
+:root {
+    --sage-green: #B2C8BA; /* Sage Green Utama */
+    --sage-green-darker: #9CB8AC; /* Sage sedikit lebih gelap for hover/accents */
+    --sage-green-rgb: 178, 200, 186; /* RGB for rgba() */
+    --light-sage-accent: #D9EAD3; /* Aksen Sage Muda */
+    --lighter-background: #F7F9F7; /* Slightly adjusted for softer feel */
+    --white: #FFFFFF;
+    --dark-text: #2c3e50; /* Darker, more professional text color */
+    --muted-text: #566573; /* For less prominent text */
+    --navbar-bg: rgba(255, 255, 255, 0.8); /* Slightly less opaque */
+    --navbar-scrolled-bg: rgba(255, 255, 255, 0.98);
+    --footer-bg: #F0F5EE; /* Adjusted footer background */
+    --primary-gradient: linear-gradient(135deg, #A7C9A7, #8FBC8F);
+    --secondary-gradient: linear-gradient(135deg, #DCE9D9, #C0D3C2); /* Softer secondary gradient */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Softer shadow */
+    --shadow-color-hover: rgba(0, 0, 0, 0.15);
+    --font-family-sans-serif: 'Montserrat', sans-serif;
+    --font-family-headings: 'Montserrat', sans-serif; /* Using Montserrat for headings too for consistency, but bolder */
+    --transition-speed: 0.3s;
+    --transition-easing: ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-sans-serif);
+    color: var(--dark-text);
+    line-height: 1.75; /* Increased for better readability */
+    padding-top: 70px;
+    background-color: var(--lighter-background);
+    transition: background-color var(--transition-speed) var(--transition-easing);
+    opacity: 0;
+    animation: fadeInBody 0.75s ease-out forwards;
+    animation-delay: 0.2s; /* Optional delay */
+}
+
+@keyframes fadeInBody {
+    to { opacity: 1; }
+}
+
+
+/* Styling Umum */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-headings);
+    font-weight: 700; /* Bolder headings */
+    color: var(--dark-text);
+    line-height: 1.3; /* Adjusted line-height for headings */
+}
+
+.text-muted {
+    color: var(--muted-text) !important; /* Override bootstrap's default if needed */
+}
+
+.section-title {
+    color: var(--sage-green-darker); /* Darker sage for better contrast */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.75rem; /* Increased padding */
+    font-size: 2.2rem; /* Slightly larger section titles */
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px; /* Longer underline */
+    height: 4px; /* Thicker underline */
+    background: var(--primary-gradient); /* Use gradient for underline */
+    margin: 0.75rem auto 0;
+}
+.text-start .section-title::after, .section-title:not(.text-center)::after { margin: 0.75rem 0 0; }
+
+
+.section-title-sub {
+    color: var(--dark-text);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.accent-heading {
+    color: var(--sage-green-darker);
+    font-weight: 600;
+}
+
+.section-bg-light {
+    background-color: var(--white);
+    box-shadow: 0 4px 20px var(--shadow-color); /* Softer, more diffused shadow */
+    margin-bottom: 2.5rem; /* Increased spacing */
+    border-radius: 12px; /* More rounded corners */
+}
+section.section-bg-light, section.cta-section {
+    padding-top: 4.5rem; /* Increased padding */
+    padding-bottom: 4.5rem;
+}
+section {
+    padding-top: 3.5rem; /* Increased padding */
+    padding-bottom: 3.5rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(12px); /* Increased blur */
+    -webkit-backdrop-filter: blur(12px);
+    transition: background-color var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing), padding var(--transition-speed) var(--transition-easing);
+    padding-top: 1rem; /* Slightly more padding */
+    padding-bottom: 1rem;
+}
+
+.navbar.scrolled {
+    background-color: var(--navbar-scrolled-bg);
+    box-shadow: 0 4px 15px var(--shadow-color); /* More defined shadow on scroll */
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.navbar-brand {
+    font-size: 1.9rem; /* Slightly larger */
+    font-weight: 700;
+    color: var(--sage-green-darker) !important;
+    transition: transform var(--transition-speed) var(--transition-easing), color var(--transition-speed) var(--transition-easing);
+}
+.navbar-brand:hover {
+    transform: scale(1.05);
+    color: var(--dark-text) !important;
+}
+
+.nav-link {
+    color: var(--dark-text) !important;
+    font-weight: 500; /* Standard weight */
+    margin-left: 12px; /* Adjusted spacing */
+    margin-right: 12px;
+    position: relative;
+    transition: color var(--transition-speed) var(--transition-easing);
+    letter-spacing: 0.3px; /* Subtle letter spacing */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px; /* Slightly thicker */
+    bottom: -6px; /* Adjusted position */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--sage-green-darker);
+    transition: width var(--transition-speed) var(--transition-easing);
+    border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 75%; /* Slightly wider */
+}
+.nav-link:hover {
+    color: var(--sage-green-darker) !important;
+}
+
+.nav-link.active {
+    color: var(--sage-green-darker) !important;
+    font-weight: 600; /* Bolder active link */
+}
+
+/* Page Header (untuk about, projects, contact) */
+.page-header {
+    padding: 6rem 0; /* Increased padding */
+    background: var(--primary-gradient);
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 5px solid var(--sage-green-darker); /* Accent border */
+}
+.page-header h1 {
+    color: var(--white);
+    font-size: 3rem; /* Larger title */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Subtle text shadow */
+}
+.page-header p {
+    font-size: 1.3rem; /* Larger lead text */
+    opacity: 0.95; /* Slightly more opaque */
+    font-weight: 300;
+}
+
+/* Tombol Kustom */
+.btn { /* Base button style */
+    border-radius: 8px; /* More rounded buttons */
+    transition: all var(--transition-speed) var(--transition-easing);
+    letter-spacing: 0.5px;
+    text-transform: uppercase; /* Uppercase for more "designed" feel */
+    font-size: 0.9rem;
+}
+.btn-lg {
+    padding: 12px 30px; /* Larger padding for lg buttons */
+    font-size: 1rem;
+}
+
+.btn-custom-primary {
+    background: var(--sage-green);
+    border-color: var(--sage-green);
+    color: var(--white);
+    padding: 10px 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(var(--sage-green-rgb), 0.3);
+}
+.btn-custom-primary:hover, .btn-custom-primary:focus {
+    background: var(--sage-green-darker);
+    border-color: var(--sage-green-darker);
+    color: var(--white);
+    transform: translateY(-4px) scale(1.02); /* More pronounced hover */
+    box-shadow: 0 7px 22px rgba(var(--sage-green-rgb), 0.5);
+}
+
+.btn-custom-secondary {
+    background-color: var(--lighter-background);
+    border: 2px solid var(--sage-green);
+    color: var(--sage-green);
+    padding: 10px 25px;
+    font-weight: 600;
+}
+.btn-custom-secondary:hover, .btn-custom-secondary:focus {
+    background-color: var(--sage-green);
+    color: var(--white);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 4px 15px rgba(var(--sage-green-rgb), 0.3);
+}
+
+.btn-custom-outline {
+    border: 2px solid var(--sage-green-darker);
+    color: var(--sage-green-darker);
+    padding: 8px 20px;
+    font-weight: 600; /* Bolder outline */
+}
+.btn-custom-outline:hover, .btn-custom-outline:focus {
+    background-color: var(--sage-green-darker);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-custom-light { /* Tombol CTA di index.html */
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--sage-green-darker);
+    padding: 10px 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.btn-custom-light:hover {
+    background: var(--lighter-background);
+    border-color: var(--lighter-background);
+    color: var(--sage-green-darker);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 7px 22px rgba(0,0,0,0.15);
+}
+
+.btn-custom-outline-light { /* Tombol CTA di index.html */
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 10px 25px;
+    font-weight: 600;
+}
+.btn-custom-outline-light:hover {
+    background: var(--white);
+    color: var(--sage-green-darker);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+/* Footer */
+.footer-section {
+    background-color: var(--footer-bg);
+    color: var(--muted-text); /* Muted text for footer */
+    border-top: 1px solid var(--light-sage-accent);
+    padding-top: 2rem; /* More padding */
+    padding-bottom: 2rem;
+}
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+.footer-section .small {
+    font-size: 0.85rem;
+}
+
+
+/* Responsif Global */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        margin-top: 1rem;
+        background-color: var(--white);
+        border-radius: 8px; /* Consistent rounding */
+        padding: 15px; /* More padding */
+        box-shadow: 0 8px 20px var(--shadow-color); /* Enhanced shadow */
+    }
+    .nav-link::after {
+        display: none;
+    }
+    .nav-link {
+        padding: 8px 0; /* Better spacing for mobile nav links */
+    }
+    .page-header {
+        padding: 4rem 0;
+    }
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    .section-title {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    body {
+        padding-top: 60px;
+        line-height: 1.65; /* Slightly reduced for smaller screens */
+    }
+    .btn-lg {
+        padding: 10px 22px; /* Adjust for smaller screens */
+        font-size: 0.9rem;
+    }
+    .hero-title { /* Referenced from index.css, ensure specificity or move rule here if more global */
+        font-size: 2.2rem !important;
+    }
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    .page-header p {
+        font-size: 1.1rem;
+    }
+    section.section-bg-light, section.cta-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+}

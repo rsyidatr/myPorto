@@ -1,0 +1,113 @@
+/* Projects Page Specific Styles */
+.project-card {
+    border: none;
+    border-radius: 12px; /* More rounding */
+    box-shadow: 0 6px 25px var(--shadow-color); /* Consistent shadow */
+    overflow: hidden;
+    transition: transform var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing);
+    background-color: var(--white); /* Ensure background for card body */
+}
+.project-card:hover {
+    transform: translateY(-12px) scale(1.01); /* Lift and slightly scale */
+    box-shadow: 0 12px 40px var(--shadow-color-hover); /* More prominent shadow */
+}
+.project-card-img-container {
+    overflow: hidden;
+    height: 220px; /* Increased height */
+    position: relative; /* For overlay */
+}
+.project-card .card-img-top {
+    border-top-left-radius: 12px; /* Match card rounding */
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: transform 0.5s var(--transition-easing), filter 0.5s var(--transition-easing);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.project-card:hover .card-img-top {
+    transform: scale(1.12); /* More zoom */
+    filter: brightness(0.8); /* Darken image slightly on hover */
+}
+
+/* Image Overlay for Project Card */
+.project-card-img-container .project-image-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(var(--sage-green-rgb), 0.6); /* Semi-transparent overlay */
+    color: var(--white);
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-speed) var(--transition-easing);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+    padding: 1rem;
+}
+.project-card:hover .project-image-overlay {
+    opacity: 1;
+}
+.project-image-overlay-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    transform: translateY(10px); /* Start slightly lower */
+    opacity: 0;
+    transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s; /* Delayed appearance */
+}
+.project-card:hover .project-image-overlay-text {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.project-card .card-body {
+    background-color: var(--white);
+    padding: 1.75rem; /* More padding in card body */
+}
+.project-card .card-title {
+    color: var(--sage-green-darker); /* Darker sage for title */
+    font-weight: 700; /* Bolder title */
+    font-size: 1.3rem; /* Larger title */
+    margin-bottom: 0.75rem;
+}
+.project-card .card-text.small { /* Tech used */
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--muted-text);
+}
+.project-card .card-text.flex-grow-1 { /* Description */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.project-card .btn-custom-primary.disabled,
+.project-card .btn-custom-primary:disabled {
+    background-color: var(--light-sage-accent);
+    border-color: var(--light-sage-accent);
+    color: var(--sage-green);
+    cursor: not-allowed;
+    opacity: 0.8;
+    box-shadow: none;
+}
+.project-card .btn-custom-primary.disabled:hover,
+.project-card .btn-custom-primary:disabled:hover {
+    transform: none;
+    box-shadow: none;
+    background-color: var(--light-sage-accent); /* Keep color on hover */
+    border-color: var(--light-sage-accent);
+    color: var(--sage-green);
+}
+
+/* Responsive Project Cards */
+@media (max-width: 767.98px) {
+    .project-card-img-container {
+        height: 180px; /* Adjust image height for mobile */
+    }
+    .project-card {
+        margin-bottom: 1.5rem; /* Space between stacked cards */
+    }
+}

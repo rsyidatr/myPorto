@@ -1,0 +1,86 @@
+/* Contact Page Specific Styles */
+.form-control {
+    border-radius: 8px; /* More rounded */
+    border: 1px solid #ced4da;
+    padding: 0.85rem 1.1rem; /* More padding */
+    transition: border-color var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing);
+    background-color: var(--white); /* Ensure white background */
+}
+.form-control:focus {
+    border-color: var(--sage-green-darker); /* Darker sage on focus */
+    box-shadow: 0 0 0 0.25rem rgba(var(--sage-green-rgb), 0.25); /* Softer focus glow */
+}
+.form-label {
+    font-weight: 500; /* Slightly bolder labels */
+    margin-bottom: 0.3rem; /* Space between label and input */
+}
+
+
+.contact-info-item {
+    margin-bottom: 1.75rem; /* More space between items */
+    transition: transform 0.3s ease;
+}
+.contact-info-item:hover {
+    transform: translateX(5px); /* Slight move on hover */
+}
+
+.contact-info-item .icon-circle-sm {
+    width: 50px; /* Larger icon circle */
+    height: 50px;
+    background: var(--light-sage-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage-green-darker);
+    font-size: 1.4rem; /* Larger icon */
+    flex-shrink: 0;
+    transition: background-color var(--transition-speed) var(--transition-easing), color var(--transition-speed) var(--transition-easing), transform var(--transition-speed) var(--transition-easing);
+}
+.contact-info-item:hover .icon-circle-sm {
+    background-color: var(--sage-green);
+    color: var(--white);
+    transform: scale(1.1) rotate(-5deg); /* Animate icon circle */
+}
+.contact-info-item strong {
+    color: var(--dark-text);
+    font-size: 1.1rem; /* Slightly larger heading for contact detail */
+}
+.contact-link {
+    color: var(--sage-green-darker);
+    transition: color var(--transition-speed) var(--transition-easing), letter-spacing var(--transition-speed) var(--transition-easing);
+    text-decoration: none; /* Ensure no underline by default */
+    font-weight: 500;
+}
+.contact-link:hover {
+    color: var(--dark-text); /* Darker on hover */
+    letter-spacing: 0.3px; /* Subtle letter spacing */
+}
+
+.social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px; /* Larger social icons */
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--light-sage-accent);
+    color: var(--sage-green-darker);
+    font-size: 1.5rem; /* Larger icon font */
+    text-decoration: none;
+    transition: all var(--transition-speed) var(--transition-easing);
+    margin-right: 0.75rem; /* More spacing */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.social-icons .social-icon:hover {
+    background-color: var(--sage-green);
+    color: var(--white);
+    transform: translateY(-5px) scale(1.15) rotate(5deg); /* More dynamic hover */
+    box-shadow: 0 6px 15px rgba(var(--sage-green-rgb), 0.4);
+}
+
+#formMessage.alert { /* Style for submission message */
+    border-radius: 8px;
+    padding: 1rem;
+    font-weight: 500;
+}
