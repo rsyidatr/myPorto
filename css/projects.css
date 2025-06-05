@@ -15,6 +15,7 @@
     overflow: hidden;
     height: 220px; /* Increased height */
     position: relative; /* For overlay */
+    cursor: pointer; /* Indicates clickable area */
 }
 .project-card .card-img-top {
     border-top-left-radius: 12px; /* Match card rounding */
@@ -28,17 +29,17 @@
 }
 .project-card:hover .card-img-top {
     transform: scale(1.12); /* More zoom */
-    filter: brightness(0.8); /* Darken image slightly on hover */
+    filter: brightness(0.7) blur(1px); /* Darken & slightly blur image on hover to make overlay text pop */
 }
 
 /* Image Overlay for Project Card */
 .project-card-img-container .project-image-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(var(--sage-green-rgb), 0.6); /* Semi-transparent overlay */
+    background: rgba(var(--sage-green-rgb), 0.5); /* Semi-transparent overlay - slightly lighter */
     color: var(--white);
     display: flex;
-    flex-direction: column; /* Align items vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -52,14 +53,19 @@
     opacity: 1;
 }
 .project-image-overlay-text {
-    font-size: 1.1rem;
-    font-weight: 600;
-    transform: translateY(10px); /* Start slightly lower */
+    font-size: 1.3rem; /* Increased size for "Detail" */
+    font-weight: 700; /* Bolder */
+    transform: translateY(15px) scale(0.9); /* Start slightly lower and smaller */
     opacity: 0;
-    transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s; /* Delayed appearance */
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s; /* Delayed appearance */
+    padding: 0.6rem 1.2rem; /* Padding for the text "button" */
+    background-color: rgba(var(--dark-text-rgb), 0.75); /* Darker background for "Detail" text */
+    color: var(--white);
+    border-radius: 8px; /* Rounded corners for the text "button" */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 .project-card:hover .project-image-overlay-text {
-    transform: translateY(0);
+    transform: translateY(0) scale(1); /* Animate to final position and size */
     opacity: 1;
 }
 
@@ -84,23 +90,83 @@
     line-height: 1.6;
 }
 
-.project-card .btn-custom-primary.disabled,
-.project-card .btn-custom-primary:disabled {
+/* Modal specific styles */
+.modal-content {
+    border-radius: 10px; /* Rounded modal */
+    border: none;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+.modal-header {
     background-color: var(--light-sage-accent);
-    border-color: var(--light-sage-accent);
-    color: var(--sage-green);
-    cursor: not-allowed;
-    opacity: 0.8;
-    box-shadow: none;
+    border-bottom: 2px solid var(--sage-green-darker); /* Darker border for more definition */
+    padding: 1rem 1.5rem;
 }
-.project-card .btn-custom-primary.disabled:hover,
-.project-card .btn-custom-primary:disabled:hover {
-    transform: none;
-    box-shadow: none;
-    background-color: var(--light-sage-accent); /* Keep color on hover */
-    border-color: var(--light-sage-accent);
-    color: var(--sage-green);
+.modal-title {
+    color: var(--dark-text);
+    font-weight: 700;
+    font-size: 1.5rem; /* Larger modal title */
 }
+.modal-body {
+    padding: 1.5rem 2rem; /* More padding in modal body */
+}
+.modal-body h6 {
+    color: var(--sage-green-darker);
+    font-weight: 700;
+    margin-top: 1.75rem; /* Increased top margin for section headings */
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem; /* Slightly larger subheading in modal */
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--light-sage-accent); /* Subtle underline for modal subheadings */
+}
+.modal-body h6:first-child {
+    margin-top: 0;
+}
+.project-team-list {
+    padding-left: 0; /* Remove default ul padding */
+}
+.project-team-list li {
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+}
+.project-team-list li strong {
+    color: var(--dark-text);
+}
+
+.carousel-item img {
+    border-radius: 8px; /* Rounded images in carousel */
+    max-height: 450px; /* Control max height of carousel images */
+    object-fit: contain; /* Ensure whole image is visible, might need adjustment based on image aspect ratios */
+    margin: auto; /* Center if object-fit: contain results in letterboxing */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(var(--dark-text-rgb), 0.5); /* Darker controls for better visibility */
+    border-radius: 50%;
+    padding: 1.2rem; /* Make control area slightly larger */
+    background-size: 50% 50%; /* Adjust icon size within the background */
+}
+.carousel-indicators [data-bs-target] {
+    background-color: var(--sage-green); /* Sage indicators */
+}
+
+
+.project-github-link {
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+    font-weight: 500;
+    text-transform: none !important; /* Override global uppercase for this specific button if desired */
+}
+.project-github-link i.bi-github {
+    margin-right: 0.5rem; /* Space between icon and text */
+    font-size: 1.2rem; /* Slightly larger GitHub icon */
+}
+
+.modal-footer {
+    background-color: var(--lighter-background);
+    border-top: 1px solid var(--light-sage-accent);
+    padding: 1rem 1.5rem;
+}
+
 
 /* Responsive Project Cards */
 @media (max-width: 767.98px) {
@@ -109,5 +175,11 @@
     }
     .project-card {
         margin-bottom: 1.5rem; /* Space between stacked cards */
+    }
+    .modal-body {
+        padding: 1rem 1.25rem;
+    }
+    .modal-title {
+        font-size: 1.3rem;
     }
 }

@@ -7,6 +7,7 @@
     --lighter-background: #F7F9F7; /* Slightly adjusted for softer feel */
     --white: #FFFFFF;
     --dark-text: #2c3e50; /* Darker, more professional text color */
+    --dark-text-rgb: 44, 62, 80; /* Tambahkan ini - RGB for dark-text */
     --muted-text: #566573; /* For less prominent text */
     --navbar-bg: rgba(255, 255, 255, 0.8); /* Slightly less opaque */
     --navbar-scrolled-bg: rgba(255, 255, 255, 0.98);
