@@ -533,7 +533,7 @@ section {
         font-size: 1.8rem;
     }
     .cta-section p {
-        font-size: 1rem;
+        font-size: 1.0rem;
     }
 }
 
@@ -544,7 +544,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #F7F9F7, #DCE9D9);
+    background: linear-gradient(135deg, #F7F9F7, #DCE9D3); /* Menggunakan lighter-background untuk base */
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -597,7 +597,44 @@ section {
     to { width: 100%; }
 }
 
-/* PERUBAHAN: Semua style ikon loading dihapus */
+/* NEW: Fountain Icon styles for loading screen */
+.fountain-icons-container {
+    position: absolute;
+    bottom: 0; /* Start from the bottom */
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cover the whole screen to allow icons to travel */
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9997;
+}
+
+.fountain-icon {
+    position: absolute;
+    font-size: 3rem; /* Larger icons */
+    color: var(--sage-green-darker); /* Color of the icons */
+    opacity: 0;
+    /* Animation properties will be set via JS using CSS variables */
+    animation: fountainSpray var(--duration) var(--delay) ease-out forwards;
+    transform-origin: center bottom; /* Spin from the bottom */
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2)); /* Subtle shadow */
+    left: 50%; /* Start horizontally centered */
+    transform: translateX(-50%); /* Center the icon itself horizontally */
+}
+
+@keyframes fountainSpray {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.5) rotate(0deg); /* Start at bottom center, no rotation */
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--endX)), var(--endY)) scale(var(--scale)) rotate(var(--rotateDeg));
+    }
+}
 
 /* Responsif untuk layar loading */
 @media (max-width: 767.98px) {
@@ -606,5 +643,11 @@ section {
     }
     .loading-bar-container {
         width: 250px;
+    }
+    .fountain-icons-container {
+        /* No specific width/height needed here as it's 100% */
+    }
+    .fountain-icon {
+        font-size: 2rem; /* Adjusted for smaller screens */
     }
 }

@@ -21,8 +21,8 @@
 
 /* Base styles for image container */
 .project-card-img-container {
+    height: 350px; /* Increased height for web project cards */
     overflow: hidden;
-    height: 300px; /* Tinggi default untuk gambar web - Ditingkatkan lagi */
     position: relative;
     cursor: default; /* Changed to default since no click action */
     background-color: var(--lighter-background);
@@ -49,7 +49,7 @@
 
 .project-card:hover .card-img-top {
     transform: scale(1.1);
-    filter: brightness(0.7) blur(2px);
+    filter: brightness(0.9) blur(1px); /* Reduced blur and brightness for less fade */
 }
 
 /* Image Overlay Styles */
@@ -84,17 +84,36 @@
     opacity: 1;
 }
 
+/* NEW: Styles for the new overlay content elements */
+.project-overlay-category {
+    font-weight: 700; /* Bolder */
+    font-size: 1.6rem; /* Larger than title */
+    margin-bottom: 0.25rem;
+    color: var(--sage-green-darker); /* Highlight the category */
+}
+
 .project-overlay-title {
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 600; /* Slightly less bold than category */
+    font-size: 1.3rem; /* Smaller than category */
     margin-bottom: 0.25rem;
 }
 
-.project-overlay-tech {
-    font-size: 0.9rem;
-    font-style: italic;
-    color: var(--muted-text);
+.project-overlay-description,
+.project-overlay-contribution,
+.project-overlay-tech,
+.project-overlay-tools {
+    font-weight: 500; /* Slightly bolder for readability */
+    font-size: 0.95rem; /* Slightly larger for readability */
+    font-style: normal; /* Ensure no italic */
+    color: var(--dark-text); /* Darker text for readability */
+    margin-bottom: 0.3rem;
+    line-height: 1.4; /* Improve line spacing */
 }
+
+.project-overlay-tools {
+    margin-bottom: 0; /* No margin after the last element */
+}
+
 
 /* Hidden Card and Show More Button Styles */
 .project-item-hidden {
@@ -196,11 +215,20 @@
     font-weight: 500;
     text-transform: none !important;
     transition: all var(--transition-speed) var(--transition-easing);
+    /* NEW: GitHub button specific styling */
+    padding: 0.5rem 1rem; /* Adjust padding to make it smaller */
+    font-size: 0.85rem; /* Smaller font size */
+    border-radius: 6px; /* Slightly less rounded */
+    background-color: var(--sage-green-darker); /* Solid background for contrast */
+    color: var(--white); /* White text */
+    border: 2px solid var(--sage-green-darker); /* Matching border */
 }
 
 .project-github-link:hover {
     transform: translateY(-4px) scale(1.03);
     box-shadow: 0 6px 15px var(--shadow-color-hover);
+    background-color: var(--white); /* Invert colors on hover */
+    color: var(--sage-green-darker);
 }
 
 .project-github-link i.bi-github,
@@ -219,10 +247,10 @@
 /* Responsive Project Cards */
 @media (max-width: 767.98px) {
     .project-card-img-container {
-        height: 200px;
+        height: 250px; /* Adjusted height for web projects on smaller screens */
     }
     .project-card--mobile .project-card-img-container {
-        height: 350px; /* Reduced height for better proportion on small screens */
+        height: 380px; /* Adjusted height for mobile projects on smaller screens */
     }
     .project-item {
         margin-bottom: 1.5rem;

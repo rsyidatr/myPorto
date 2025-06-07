@@ -15,11 +15,9 @@
 
     <div id="loading-overlay">
         <div class="loading-content">
-            <h1 class="loading-title">Rasyidatur Rahma Portofolio</h1>
-            <div class="loading-bar-container">
-                <div class="loading-bar"></div>
+            <h1 class="loading-title" id="loading-text-progress">Rasyidatur Rahma Portofolio</h1>
             </div>
-        </div>
+        <div class="fountain-icons-container"></div>
     </div>
 
     <nav class="navbar navbar-expand-lg sticky-top navbar-light">
@@ -36,10 +34,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="html/projects.html">Projek</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/contact.html">Kontak</a>
-                    </li>
-                </ul>
+                    </ul>
             </div>
         </div>
     </nav>
@@ -82,8 +77,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <h2 class="section-title text-start">Sedikit Tentang Saya</h2>
-                    <p class="text-muted"> saya adalah mahasiswa D3 Teknik Informatika Politeknik Elektronika Negeri Surabaya yang berdedikasi untuk menerjemahkan ide-ide kreatif menjadi solusi digital yang inovatif
-                        Dengan keahlian yang kuat di bidang UI/UX design dan Frontend Web Development.</p>
+                    <p class="text-muted"> saya adalah mahasiswa D3 Teknik Informatika Politeknik Elektronika Negeri Surabaya dengan minat tinggi pada bidang UI/UX designer dan Frontend Web development.
+                        Terbiasa menggunakan HTML, CSS, FLutter dan framework seperti BootStrap dan TailwindCSS. Aktif dalam proyek kampus dan kegiatan kampus.</p>
                     <p class="text-muted">Saya mahir dalam membangun tampilan web yang interaktif dan estetis dengan HTML, CSS, Flutter, Bootstrap, dan TailwindCSS. Motivasi saya yang tinggi dan keterlibatan aktif dalam proyek serta kegiatan kampus,
                         membuktikan komitmen saya untuk terus belajar dan menerapkan teknologi terbaru dalam memecahkan tantangan dunia nyata.</p>
                     <div class="mt-4">
@@ -92,7 +87,17 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-center mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
-                    <img src="assets/foto1.jpg" alt="Foto Syida" class="img-fluid rounded-circle shadow-lg profile-img-home">
+                    <div class="profile-img-container-home">
+                        <img src="assets/foto1.jpg" alt="Foto Syida" class="img-fluid rounded-circle shadow-lg profile-img-home">
+                        <div class="profile-overlay">
+                            <div class="profile-overlay-content">
+                                <p class="profile-overlay-text">Salam kenal</p>
+                                <p class="profile-overlay-text">Aku Rasyidatur Rahma (Syida)</p>
+                                <p class="profile-overlay-text">Mahasiswi D3 IT PENS Semester 4</p>
+                                <a href="#footer-section" class="btn btn-sm btn-custom-light mt-2 profile-contact-btn">Kontak Saya</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -156,12 +161,12 @@
         <div class="container" data-aos="fade-up">
             <h2 class="display-5"><strong>Lihat Apa yang Sudah Saya Bangun</strong></h2>
             <p class="lead my-4">Lihat bagaimana saya menggabungkan logika frontend dan estetika desain <br> dalam setiap aplikasi dan situs web yang saya kerjakan</p>
-            <a href="html/contact.html" class="btn btn-peek btn-custom-light btn-lg">Kontak Saya</a>
+            <a href="#footer-section" class="btn btn-peek btn-custom-light btn-lg">Kontak Saya</a>
             <a href="html/projects.html" class="btn btn-peek btn-custom-outline-light btn-lg ms-md-3">Lihat Projek Saya</a>
         </div>
     </section>
 
-    <footer class="footer-section">
+    <footer id="footer-section" class="footer-section">
         <div class="container">
             <div class="row gy-5 text-center text-md-start">
                 <div class="col-lg-4 col-md-12">
@@ -173,7 +178,6 @@
                     <ul class="footer-links">
                         <li><a href="index.html">Beranda</a></li>
                         <li><a href="html/projects.html">Projek</a></li>
-                        <li><a href="html/contact.html">Kontak</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4">
@@ -187,14 +191,15 @@
                 <div class="col-lg-3 col-md-4">
                     <h5 class="footer-heading">Kontak</h5>
                     <ul class="footer-links">
-                        <li><a href="mailto:emailanda@example.com">rasyidaturr.com</a></li>
-                        <li><a href="tel:+621234567890">+62 853-3500-7557</a></li>
+                        <li><a href="mailto:rasyidaturr@gmail.com">rasyidaturr@gmail.com</a></li>
+                        <li><a href="tel:+6285335007557">+62 853-3500-7557</a></li>
+                        <li class="mt-2 text-white-50">Surabaya, Jawa Timur, Indonesia</li>
                     </ul>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center border-top pt-4">
-                    <p class="copyright-text mb-0">&copy; <span id="currentYear"></span> Rasyidatur Rahma. Hak Cipta Dilindungi.</p>
+                    <p class="copyright-text mb-0">&copy; <span id="currentYear"></span> Rasyidatur Rahma. Hak Cipta Dilindungi.<br>Waktu Lokal: GMT+7</p>
                 </div>
             </div>
         </div>
