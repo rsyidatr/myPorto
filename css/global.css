@@ -69,9 +69,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 70px; /* Longer underline */
     height: 4px; /* Thicker underline */
     background: var(--primary-gradient); /* Use gradient for underline */
-    margin: 0.75rem auto 0;
+    margin: 0.75rem 0 0; /* Default menjadi rata kiri */
 }
-.text-start .section-title::after, .section-title:not(.text-center)::after { margin: 0.75rem 0 0; }
+
+.text-center .section-title::after, .section-title.text-center::after {
+    margin-left: auto; /* Memusatkan garis jika judul di tengah */
+    margin-right: auto;
+}
 
 
 .section-title-sub {
@@ -167,21 +171,20 @@ section {
 
 /* Page Header (untuk about, projects, contact) */
 .page-header {
-    padding: 6rem 0; /* Increased padding */
-    background: var(--primary-gradient);
-    color: var(--white);
+    padding: 6rem 0;
+    background: var(--light-sage-accent);
+    color: var(--dark-text);
     text-align: center;
     margin-bottom: 2.5rem;
-    border-bottom: 5px solid var(--sage-green-darker); /* Accent border */
 }
 .page-header h1 {
-    color: var(--white);
+    color: var(--dark-text);
     font-size: 3rem; /* Larger title */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Subtle text shadow */
+    text-shadow: none;
 }
 .page-header p {
     font-size: 1.3rem; /* Larger lead text */
-    opacity: 0.95; /* Slightly more opaque */
+    color: var(--muted-text);
     font-weight: 300;
 }
 
@@ -192,82 +195,98 @@ section {
     letter-spacing: 0.5px;
     text-transform: uppercase; /* Uppercase for more "designed" feel */
     font-size: 0.9rem;
+    border-width: 2px; /* Ensure border width is consistent */
+    border-style: solid;
+    will-change: transform, box-shadow; /* Animation optimization */
 }
 .btn-lg {
     padding: 12px 30px; /* Larger padding for lg buttons */
     font-size: 1rem;
 }
 
+/* Tombol Primer */
 .btn-custom-primary {
     background: var(--sage-green);
-    border-color: var(--sage-green);
+    border-color: var(--white);
     color: var(--white);
     padding: 10px 25px;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(var(--sage-green-rgb), 0.3);
 }
 .btn-custom-primary:hover, .btn-custom-primary:focus {
-    background: var(--sage-green-darker);
-    border-color: var(--sage-green-darker);
-    color: var(--white);
-    transform: translateY(-4px) scale(1.02); /* More pronounced hover */
-    box-shadow: 0 7px 22px rgba(var(--sage-green-rgb), 0.5);
+    background: var(--lighter-background);
+    border-color: var(--sage-green);
+    color: var(--sage-green);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(var(--sage-green-rgb), 0.35);
 }
 
+/* Tombol Sekunder */
 .btn-custom-secondary {
     background-color: var(--lighter-background);
-    border: 2px solid var(--sage-green);
+    border-color: var(--sage-green);
     color: var(--sage-green);
     padding: 10px 25px;
     font-weight: 600;
+    box-shadow: 0 4px 15px var(--shadow-color);
 }
 .btn-custom-secondary:hover, .btn-custom-secondary:focus {
     background-color: var(--sage-green);
+    border-color: var(--sage-green);
     color: var(--white);
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 4px 15px rgba(var(--sage-green-rgb), 0.3);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(var(--sage-green-rgb), 0.35);
 }
 
+/* Tombol Outline */
 .btn-custom-outline {
-    border: 2px solid var(--sage-green-darker);
+    border-color: var(--sage-green-darker);
     color: var(--sage-green-darker);
     padding: 8px 20px;
-    font-weight: 600; /* Bolder outline */
+    font-weight: 600;
+    background-color: transparent;
 }
 .btn-custom-outline:hover, .btn-custom-outline:focus {
     background-color: var(--sage-green-darker);
+    border-color: var(--sage-green-darker);
     color: var(--white);
-    transform: translateY(-2px);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(var(--sage-green-rgb), 0.25);
 }
 
-.btn-custom-light { /* Tombol CTA di index.html */
+/* Tombol Terang (CTA) */
+.btn-custom-light {
     background: var(--white);
-    border-color: var(--white);
+    border-color: var(--sage-green-darker);
     color: var(--sage-green-darker);
     padding: 10px 25px;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.btn-custom-light:hover {
-    background: var(--lighter-background);
-    border-color: var(--lighter-background);
-    color: var(--sage-green-darker);
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 7px 22px rgba(0,0,0,0.15);
+.btn-custom-light:hover, .btn-custom-light:focus {
+    background: var(--primary-gradient); /* UPDATED */
+    border-color: var(--white);
+    color: var(--white);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(var(--sage-green-rgb), 0.35);
 }
 
-.btn-custom-outline-light { /* Tombol CTA di index.html */
-    border: 2px solid var(--white);
+/* Tombol Outline Terang (CTA) */
+.btn-custom-outline-light {
+    border-color: var(--white);
     color: var(--white);
     padding: 10px 25px;
     font-weight: 600;
+    background-color: transparent;
 }
-.btn-custom-outline-light:hover {
+.btn-custom-outline-light:hover, .btn-custom-outline-light:focus {
     background: var(--white);
+    border-color: var(--white);
     color: var(--sage-green-darker);
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(255,255,255,0.2);
 }
+
 
 /* Footer */
 .footer-section {

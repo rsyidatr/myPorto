@@ -1,86 +1,78 @@
 /* Contact Page Specific Styles */
-.form-control {
-    border-radius: 8px; /* More rounded */
-    border: 1px solid #ced4da;
-    padding: 0.85rem 1.1rem; /* More padding */
-    transition: border-color var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing);
-    background-color: var(--white); /* Ensure white background */
-}
-.form-control:focus {
-    border-color: var(--sage-green-darker); /* Darker sage on focus */
-    box-shadow: 0 0 0 0.25rem rgba(var(--sage-green-rgb), 0.25); /* Softer focus glow */
-}
-.form-label {
-    font-weight: 500; /* Slightly bolder labels */
-    margin-bottom: 0.3rem; /* Space between label and input */
+
+.contact-card {
+    background-color: var(--white);
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px var(--shadow-color);
+    transition: transform var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing);
+    border: 1px solid var(--lighter-background);
 }
 
-
-.contact-info-item {
-    margin-bottom: 1.75rem; /* More space between items */
-    transition: transform 0.3s ease;
-}
-.contact-info-item:hover {
-    transform: translateX(5px); /* Slight move on hover */
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px var(--shadow-color-hover);
+    border-color: var(--light-sage-accent);
 }
 
-.contact-info-item .icon-circle-sm {
-    width: 50px; /* Larger icon circle */
-    height: 50px;
+.icon-circle-lg {
+    width: 70px;
+    height: 70px;
     background: var(--light-sage-accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--sage-green-darker);
-    font-size: 1.4rem; /* Larger icon */
-    flex-shrink: 0;
-    transition: background-color var(--transition-speed) var(--transition-easing), color var(--transition-speed) var(--transition-easing), transform var(--transition-speed) var(--transition-easing);
+    font-size: 2rem;
+    transition: all var(--transition-speed) var(--transition-easing);
 }
-.contact-info-item:hover .icon-circle-sm {
+
+.contact-card:hover .icon-circle-lg {
     background-color: var(--sage-green);
     color: var(--white);
-    transform: scale(1.1) rotate(-5deg); /* Animate icon circle */
+    transform: scale(1.1) rotate(-10deg);
 }
-.contact-info-item strong {
+
+.contact-card h5 {
+    font-weight: 700;
     color: var(--dark-text);
-    font-size: 1.1rem; /* Slightly larger heading for contact detail */
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
+
 .contact-link {
-    color: var(--sage-green-darker);
-    transition: color var(--transition-speed) var(--transition-easing), letter-spacing var(--transition-speed) var(--transition-easing);
-    text-decoration: none; /* Ensure no underline by default */
+    color: var(--muted-text);
+    text-decoration: none;
     font-weight: 500;
+    transition: color var(--transition-speed) var(--transition-easing);
 }
+
 .contact-link:hover {
-    color: var(--dark-text); /* Darker on hover */
-    letter-spacing: 0.3px; /* Subtle letter spacing */
+    color: var(--sage-green-darker);
 }
 
 .social-icons .social-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 45px; /* Larger social icons */
+    width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: var(--light-sage-accent);
+    background-color: var(--white);
+    border: 1px solid var(--light-sage-accent);
     color: var(--sage-green-darker);
-    font-size: 1.5rem; /* Larger icon font */
+    font-size: 1.5rem;
     text-decoration: none;
     transition: all var(--transition-speed) var(--transition-easing);
-    margin-right: 0.75rem; /* More spacing */
+    margin: 0 0.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
 .social-icons .social-icon:hover {
     background-color: var(--sage-green);
     color: var(--white);
-    transform: translateY(-5px) scale(1.15) rotate(5deg); /* More dynamic hover */
+    border-color: var(--sage-green);
+    transform: translateY(-5px) scale(1.15);
     box-shadow: 0 6px 15px rgba(var(--sage-green-rgb), 0.4);
-}
-
-#formMessage.alert { /* Style for submission message */
-    border-radius: 8px;
-    padding: 1rem;
-    font-weight: 500;
 }
