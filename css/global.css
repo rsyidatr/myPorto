@@ -30,7 +30,6 @@ body {
     font-family: var(--font-family-sans-serif);
     color: var(--dark-text);
     line-height: 1.75; /* Increased for better readability */
-    /* padding-top: 70px; Dihapus untuk memperbaiki masalah tumpukan dengan navbar sticky */
     background-color: var(--lighter-background);
     transition: background-color var(--transition-speed) var(--transition-easing);
     opacity: 0;
@@ -349,7 +348,6 @@ section {
 
 @media (max-width: 767.98px) {
     body {
-        /* padding-top: 60px; Dihapus untuk memperbaiki masalah tumpukan dengan navbar sticky */
         line-height: 1.65; /* Slightly reduced for smaller screens */
     }
     .btn-lg {
@@ -376,14 +374,14 @@ section {
     }
 }
 
-/* === KODE BARU: LOADING OVERLAY === */
+/* === KODE LOADING OVERLAY === */
 #loading-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #F7F9F7, #DCE9D9); /* Latar belakang gradien lembut */
+    background: linear-gradient(135deg, #F7F9F7, #DCE9D9);
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -402,7 +400,7 @@ section {
 
 .loading-content {
     text-align: center;
-    z-index: 9998; /* Di atas ikon */
+    z-index: 9998;
     color: var(--dark-text);
     position: relative;
 }
@@ -436,33 +434,7 @@ section {
     to { width: 100%; }
 }
 
-/* Ikon Melayang */
-.loading-icons i {
-    position: absolute;
-    font-size: 3rem;
-    color: rgba(var(--sage-green-rgb), 0.5);
-    animation-name: float;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    z-index: 9997; /* Di bawah teks loading */
-    top: -50px; /* Mulai dari luar layar */
-}
-
-/* Posisi dan durasi animasi untuk setiap ikon */
-.loading-icons i:nth-child(1) { top: 10%; left: 15%; animation-duration: 15s; animation-delay: 0s; }
-.loading-icons i:nth-child(2) { top: 20%; left: 80%; animation-duration: 12s; animation-delay: -3s; }
-.loading-icons i:nth-child(3) { top: 70%; left: 10%; animation-duration: 18s; animation-delay: -5s; }
-.loading-icons i:nth-child(4) { top: 80%; left: 75%; animation-duration: 10s; animation-delay: -8s; }
-.loading-icons i:nth-child(5) { top: 50%; left: 50%; animation-duration: 16s; animation-delay: -2s; }
-.loading-icons i:nth-child(6) { top: 30%; left: 30%; animation-duration: 13s; animation-delay: -10s; }
-.loading-icons i:nth-child(7) { top: 60%; left: 90%; animation-duration: 11s; animation-delay: -4s; }
-.loading-icons i:nth-child(8) { top: 90%; left: 25%; animation-duration: 17s; animation-delay: -6s; }
-
-@keyframes float {
-    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.5; }
-    50% { transform: translateY(-25px) translateX(15px) rotate(180deg); opacity: 0.8; }
-    100% { transform: translateY(0) translateX(0) rotate(360deg); opacity: 0.5; }
-}
+/* PERUBAHAN: Semua style ikon loading dihapus */
 
 /* Responsif untuk layar loading */
 @media (max-width: 767.98px) {
@@ -471,8 +443,5 @@ section {
     }
     .loading-bar-container {
         width: 250px;
-    }
-    .loading-icons i {
-        font-size: 2.5rem;
     }
 }

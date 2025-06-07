@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // === KODE BARU: LOGIKA LOADING SCREEN SEKALI TAYANG ===
+    // === KODE LOADING SCREEN SEKALI TAYANG ===
     const loadingOverlay = document.getElementById('loading-overlay');
 
     // Cek apakah elemen loading screen ada di halaman ini (hanya ada di index.html)
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    // === AKHIR KODE BARU ===
+    // === AKHIR KODE LOADING SCREEN ===
 
 
     // Inisialisasi AOS (Animate On Scroll)
@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link.removeAttribute('aria-current');
 
         const linkFileName = link.getAttribute('href').split("/").pop() || "index.html";
-        // More robust check for active link, especially if relative paths differ
         const linkPath = link.getAttribute('href');
 
         if (linkFileName === currentPageFileName || linkPath === currentPageFileName || (currentPageFileName === "index.html" && linkPath === "../index.html")) {
@@ -89,24 +88,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // CSS tambahan untuk cursor ketik (jika efek ketik aktif)
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .typing-cursor {
-            display: inline-block;
-            width: 2px; /* Thinner cursor */
-            height: 1em; /* Match text height */
-            background-color: var(--dark-text); /* Use theme color */
-            animation: blink 0.8s infinite; /* Slightly slower blink */
-            margin-left: 3px; /* More space */
-            vertical-align: middle; /* Align better with text */
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Skill Bar Animation logic removed as progress bars are no longer used.
 });
