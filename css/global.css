@@ -464,6 +464,36 @@ section {
     width: 0%; /* Start at 0% for JS animation, JS will set the target width */
 }
 
+/* Icon Hover Effect (Green Flash/Shine) */
+.skill-tool-card {
+    position: relative; /* Needed for absolute positioning of pseudo-element */
+    overflow: hidden; /* Ensures the shine effect stays within the card bounds */
+    z-index: 1; /* Ensures content is above the pseudo-element */
+}
+
+.skill-tool-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -200%; /* Start far left */
+    width: 200%; /* Wider than the card */
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(var(--sage-green-rgb), 0.3), transparent); /* Greenish glow */
+    transform: skewX(-20deg); /* Slanted look */
+    transition: transform var(--transition-speed) ease-out; /* Smooth transition for hover */
+    z-index: -1; /* Behind content */
+}
+
+.skill-tool-card:hover::after {
+    transform: skewX(-20deg) translateX(150%); /* Move across the card on hover */
+}
+
+.skill-tool-card .skill-tool-icon,
+.skill-tool-card .skill-tool-name {
+    position: relative; /* Ensure icon and text are above the pseudo-element */
+    z-index: 2;
+}
+
 
 /* Responsif Global */
 @media (max-width: 991.98px) {
@@ -584,57 +614,273 @@ section {
     background-position-x: 100%; /* Start with only white visible, gradient fills from left */
 }
 
-/* NEW: Fountain Icon styles for loading screen */
-.fountain-icons-container {
-    position: absolute;
-    bottom: 0; /* Start from the bottom */
-    left: 0;
-    width: 100%;
-    height: 100%; /* Cover the whole screen to allow icons to travel */
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 9997;
-}
-
-.fountain-icon {
-    position: absolute;
-    font-size: 3rem; /* Larger icons */
-    color: var(--sage-green-darker); /* Color of the icons */
-    opacity: 0;
-    /* Animation properties will be set via JS using CSS variables */
-    animation: fountainSpray var(--duration) var(--delay) ease-out forwards;
-    transform-origin: center bottom; /* Spin from the bottom */
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2)); /* Subtle shadow */
-    left: 50%; /* Start horizontally centered */
-    transform: translateX(-50%); /* Center the icon itself horizontally */
-}
-
-@keyframes fountainSpray {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, 0) scale(0.5) rotate(0deg); /* Start at bottom center, no rotation */
-    }
-    10% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translate(calc(-50% + var(--endX)), var(--endY)) scale(var(--scale)) rotate(var(--rotateDeg));
-    }
-}
+/* Fountain icons container and animation removed as requested */
 
 /* Responsif untuk layar loading */
 @media (max-width: 767.98px) {
     .loading-title {
         font-size: 1.8rem;
     }
-    .loading-bar-container {
-        width: 250px;
+}
+
+/* Projects Page Specific Styles (MOVED FROM projects.css) */
+.project-card {
+    border: 1px solid var(--sage-green-darker);
+    border-radius: 12px;
+    box-shadow: 0 6px 25px var(--shadow-color);
+    overflow: hidden;
+    transition: transform var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing);
+    background-color: var(--white);
+}
+
+.project-card:not(.project-card--mobile) {
+    padding-bottom: 0;
+}
+
+
+.project-card:hover {
+    transform: translateY(-12px) scale(1.01);
+    box-shadow: 0 12px 40px var(--shadow-color-hover);
+}
+
+.project-card-img-container {
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+    background-color: var(--lighter-background);
+}
+
+.project-card .card-img-top {
+    border-radius: 12px;
+    transition: transform 0.5s var(--transition-easing), filter 0.5s var(--transition-easing);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-card--mobile .project-card-img-container {
+    height: 490px;
+}
+
+.project-card--mobile .card-img-top {
+    object-fit: contain;
+    padding: 1rem;
+}
+
+
+.project-card:hover .card-img-top {
+    transform: scale(1.1);
+    filter: brightness(0.9) blur(1px);
+}
+
+.project-image-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-speed) var(--transition-easing);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.project-card:hover .project-image-overlay {
+    opacity: 1;
+}
+
+.project-overlay-content {
+    transform: translateY(15px);
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+    text-align: center;
+    color: var(--dark-text);
+}
+
+.project-card:hover .project-overlay-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-overlay-category {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+    color: var(--sage-green-darker);
+}
+
+.project-overlay-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-overlay-description,
+.project-overlay-contribution,
+.project-overlay-tech,
+.project-overlay-tools {
+    font-weight: 500;
+    font-size: 0.95rem;
+    font-style: normal;
+    color: var(--dark-text);
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.project-overlay-tools {
+    margin-bottom: 0;
+}
+
+
+.project-item-hidden {
+    display: none;
+}
+
+.project-item.is-visible {
+    display: block !important;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.show-more-btn {
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.show-more-btn .bi {
+    transition: transform 0.3s ease-in-out;
+}
+
+.show-more-btn.expanded .bi {
+    transform: rotate(180deg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+.modal-header {
+    background-color: var(--light-sage-accent);
+    border-bottom: 2px solid var(--sage-green-darker);
+    padding: 1rem 1.5rem;
+}
+.modal-title {
+    color: var(--dark-text);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.modal-body {
+    padding: 1.5rem 2rem;
+}
+.modal-body h6 {
+    color: var(--sage-green-darker);
+    font-weight: 700;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--light-sage-accent);
+}
+.modal-body h6:first-child {
+    margin-top: 0;
+}
+.project-team-list {
+    padding-left: 0;
+}
+.project-team-list li {
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+}
+.project-team-list li strong {
+    color: var(--dark-text);
+}
+
+.project-github-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    text-transform: none !important;
+    transition: all var(--transition-speed) var(--transition-easing);
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    background-color: var(--sage-green-darker);
+    color: var(--white);
+    border: 2px solid var(--sage-green-darker);
+}
+
+.project-github-link:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 15px var(--shadow-color-hover);
+    background-color: var(--white);
+    color: var(--sage-green-darker);
+}
+
+.project-github-link i.bi-github,
+.project-github-link i.bi-link-45deg {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.modal-footer {
+    background-color: var(--lighter-background);
+    border-top: 1px solid var(--light-sage-accent);
+    padding: 1rem 1.5rem;
+}
+
+/* Responsive Project Cards */
+@media (max-width: 767.98px) {
+    .project-card-img-container {
+        height: 250px;
     }
-    .fountain-icons-container {
-        /* No specific width/height needed here as it's 100% */
+    .project-card--mobile .project-card-img-container {
+        height: 380px;
     }
-    .fountain-icon {
-        font-size: 2rem; /* Adjusted for smaller screens */
+    .project-item {
+        margin-bottom: 1.5rem;
     }
+    .modal-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Updated Projects Header Styling */
+.hero-section.project-header {
+    min-height: auto;
+    padding: 6rem 0;
+    margin-bottom: 2.5rem;
+    /* Styles similar to .cta-section for rounded corners and side spacing */
+    border-radius: 12px; /* Rounded corners */
+    margin: 2.5rem auto; /* Margin to the sides */
+    max-width: calc(100% - 2rem); /* Limit width for side spacing (adjust as needed) */
+    position: relative; /* Needed for absolute positioning of falling icons */
+    overflow: hidden; /* Ensure content and icons stay within bounds */
+    background-color: var(--light-sage-accent); /* Use a consistent background for clarity */
+    background: var(--primary-gradient); /* Maintain the gradient background */
+    background-size: 200% 200%; /* For gradient animation */
+    animation: gradientBackground 15s ease infinite alternate; /* Keep gradient animation */
+    color: var(--white); /* Ensure text is readable on gradient */
+}
+
+/* Scroll Progress Bar */
+#scroll-progress-bar {
+    position: fixed;
+    top: 0; /* Will be set dynamically by JS to be below navbar */
+    left: 0;
+    height: 4px; /* Thin bar */
+    background: var(--primary-gradient); /* Green color */
+    width: 0%; /* Initial width, will be set by JS */
+    z-index: 1040; /* Above navbar-brand, below loading overlay */
+    transition: width 0.1s linear; /* Smooth fill animation */
 }

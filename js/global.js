@@ -2,73 +2,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // === KODE LOADING SCREEN SEKALI TAYANG ===
     const loadingOverlay = document.getElementById('loading-overlay');
-    const fountainContainer = document.querySelector('.fountain-icons-container');
+    // const fountainContainer = document.querySelector('.fountain-icons-container'); // Removed as requested
     const loadingTextProgress = document.getElementById('loading-text-progress'); // Get the text element
 
-    // List of skills and tools for the fountain animation
-    const fountainIcons = [
-        '<i class="bi bi-filetype-html"></i>',
-        '<i class="bi bi-filetype-css"></i>',
-        '<i class="bi bi-filetype-js"></i>',
-        '<i class="bi bi-phone"></i>', // Flutter (or general phone icon)
-        '<i class="bi bi-bootstrap"></i>',
-        '<i class="bi bi-wind"></i>', // TailwindCSS
-        '<i class="bi bi-git"></i>',
-        '<i class="bi bi-github"></i>',
-        '<i class="bi bi-palette-fill"></i>', // UI/UX general
-        '<i class="bi bi-pencil-fill"></i>', // Design general
-        '<i class="bi bi-code-slash"></i>', // Coding general
-        '<i class="bi bi-people-fill"></i>', // Scrum/Agile
-        '<i class="bi bi-android2"></i>', // Android Studio
-        // Figma SVG - Pastikan path ini benar jika Anda menggunakannya sebagai file terpisah
-        '<svg class="skill-tool-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M7.5 6a1.5 1.5 0 0 1 1.5-1.5h6A1.5 1.5 0 0 1 16.5 6v6a1.5 1.5 0 0 1-1.5 1.5h-1.5a1.5 1.5 0 0 0-1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 6 18V7.5A1.5 1.5 0 0 1 7.5 6zm1.5 0v1.5h6V6h-6zm0 3v1.5h3V9h-3zM9 13.5v-3h1.5v3H9zm0 1.5h1.5v3H9v-3zm3-1.5v-1.5h3V12h-3z"/></svg>'
-    ];
+    // Fountain icon creation function removed as requested
+    // function createFountainIcon() { ... }
 
-    function createFountainIcon() {
-        if (!fountainContainer) return;
-
-        const iconHtml = fountainIcons[Math.floor(Math.random() * fountainIcons.length)];
-        const iconElement = document.createElement('div');
-        iconElement.innerHTML = iconHtml;
-        iconElement.classList.add('fountain-icon');
-
-        // Randomize trajectory (relative to start position)
-        // endX will be relative offset from center (0)
-        const endX = (Math.random() * window.innerWidth * 0.6) - (window.innerWidth * 0.3); // -30% to +30% of viewport width
-        // endY will be relative offset upwards. Negative value means moving upwards.
-        const endY = -(Math.random() * window.innerHeight * 0.7 + window.innerHeight * 0.3); // Move up 30% to 100% of viewport height
-        const rotateDeg = Math.random() * 720 - 360; // -360 to +360 degrees
-        const scale = Math.random() * 0.8 + 1.2; // Scale from 1.2 to 2.0 (larger icons)
-
-        iconElement.style.setProperty('--endX', `${endX}px`);
-        iconElement.style.setProperty('--endY', `${endY}px`);
-        iconElement.style.setProperty('--rotateDeg', `${rotateDeg}deg`);
-        iconElement.style.setProperty('--scale', `${scale}`);
-        iconElement.style.setProperty('--duration', `${Math.random() * 1.5 + 2.5}s`); // 2.5s to 4s
-        iconElement.style.setProperty('--delay', `${Math.random() * 0.5}s`); // 0s to 0.5s delay
-
-        fountainContainer.appendChild(iconElement);
-
-        // Remove icon after animation to prevent DOM clutter
-        iconElement.addEventListener('animationend', () => {
-            iconElement.remove();
-        });
-    }
-
-    // Interval to create fountain icons
-    let fountainInterval;
+    // Interval to create fountain icons logic removed as requested
+    // let fountainInterval;
     if (loadingOverlay) {
         if (sessionStorage.getItem('hasAlreadyLoaded')) {
             loadingOverlay.style.display = 'none';
         } else {
-            // Start fountain animation during loading
-            fountainInterval = setInterval(createFountainIcon, 100); // Create an icon every 100ms
+            // Fountain animation interval creation removed
+            // fountainInterval = setInterval(createFountainIcon, 100);
 
             window.addEventListener('load', () => {
-                // Simulate loading progress for the text fill effect
                 let progress = 0;
-                const totalDuration = 2200; // Total time for the loading animation
-                const intervalTime = 20; // Update every 20ms
+                const totalDuration = 2200;
+                const intervalTime = 20;
                 const steps = totalDuration / intervalTime;
                 let currentStep = 0;
 
@@ -81,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         clearInterval(loadingTextInterval);
                         setTimeout(() => {
                             loadingOverlay.classList.add('hidden');
-                            clearInterval(fountainInterval); // Stop creating icons
+                            // clearInterval(fountainInterval); // Removed as requested
                             sessionStorage.setItem('hasAlreadyLoaded', 'true');
-                        }, 200); // Small buffer after text fill completes
+                        }, 200);
                     }
                 }, intervalTime);
             });
@@ -114,31 +66,89 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Active Nav Link Highlighting
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const currentPageFileName = window.location.pathname.split("/").pop() || "index.html";
+    // Scrollspy logic to update active nav link
+    function updateActiveNavLink() {
+        // Get relevant sections that correspond to nav links
+        const homeSection = document.getElementById('home-section');
+        const projectsSection = document.getElementById('projects-section');
+        const footerSection = document.getElementById('footer-section');
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const offset = navbarHeight + 10; // Offset for better accuracy
 
-        const linkFileName = link.getAttribute('href').split("/").pop() || "index.html";
-        const linkPath = link.getAttribute('href');
+        // Get current scroll position with consideration for navbar height
+        const scrollPos = window.scrollY + offset;
 
-        // Check if the link href is the current page, or if it's the home link on the index page
-        if (linkFileName === currentPageFileName || linkPath === currentPageFileName || (currentPageFileName === "index.html" && (linkPath === "index.html" || linkPath === ""))) {
-            link.classList.add('active');
-            link.setAttribute('aria-current', 'page');
+        // Reset active classes on all links
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+        });
+
+        let activeNavLinkHref = '#home-section'; // Default to Beranda
+
+        // Check if user is scrolled to the very bottom
+        const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 5); // 5px buffer for bottom detection
+
+        if (isAtBottom) {
+            activeNavLinkHref = '#footer-section';
+        } else if (projectsSection && scrollPos >= projectsSection.offsetTop) {
+            // If scrolled past projects section start
+            activeNavLinkHref = '#projects-section';
+        } else {
+            // Otherwise, it's in the home section implicitly
+            activeNavLinkHref = '#home-section';
         }
-    });
-
-    // Update Tahun Copyright di Footer
-    const currentYearElement = document.getElementById('currentYear');
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
+        
+        // Apply active class
+        const activeLink = document.querySelector(`.navbar-nav .nav-link[href="${activeNavLinkHref}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+            activeLink.setAttribute('aria-current', 'page');
+        }
     }
 
-    // Smooth scroll untuk link internal (jika ada yang menggunakan #)
+    // Function to update the scroll progress bar
+    const scrollProgressBar = document.getElementById('scroll-progress-bar');
+    function updateScrollProgressBar() {
+        if (!scrollProgressBar) return;
+
+        const windowHeight = window.innerHeight;
+        const fullHeight = document.documentElement.scrollHeight;
+        const scrolled = window.scrollY;
+
+        // Calculate scroll percentage
+        let progress = 0;
+        if (fullHeight - windowHeight > 0) { // Avoid division by zero
+            progress = (scrolled / (fullHeight - windowHeight)) * 100;
+        }
+        
+        scrollProgressBar.style.width = `${progress}%`;
+
+        // Position the progress bar directly below the navbar
+        if (navbar) {
+            scrollProgressBar.style.top = `${navbar.offsetHeight}px`;
+        }
+    }
+
+
+    // Debounce scroll event for performance, combining scrollspy and progress bar update
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            updateActiveNavLink();
+            updateScrollProgressBar();
+        }, 50); // Adjust debounce time as needed
+    });
+
+    // Set initial active link and progress bar on page load
+    window.addEventListener('load', () => {
+        updateActiveNavLink();
+        updateScrollProgressBar();
+    });
+
+    // Smooth scroll for internal links (using #)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const hrefAttribute = this.getAttribute('href');
@@ -147,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetElement = document.querySelector(hrefAttribute);
                 
                 const navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
-                const additionalOffset = 20; // Jarak aman tambahan
+                const additionalOffset = 20; // Additional safe distance
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - additionalOffset;
 

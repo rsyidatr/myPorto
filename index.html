@@ -17,8 +17,7 @@
         <div class="loading-content">
             <h1 class="loading-title" id="loading-text-progress">Rasyidatur Rahma Portofolio</h1>
         </div>
-        <div class="fountain-icons-container"></div>
-    </div>
+        </div>
 
     <nav class="navbar navbar-expand-lg sticky-top navbar-light">
         <div class="container">
@@ -29,45 +28,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Beranda</a>
+                        <a class="nav-link active" aria-current="page" href="#home-section">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="html/projects.html">Projek</a>
+                        <a class="nav-link" href="#projects-section">Projek</a>
                     </li>
-                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer-section">Kontak</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
+    <div id="scroll-progress-bar"></div>
 
-    <header class="hero-section d-flex align-items-center justify-content-center text-center">
+    <header id="home-section" class="hero-section d-flex align-items-center justify-content-center text-center">
         
-        <div class="falling-icons-container" aria-hidden="true">
-            <i class="falling-icon bi bi-filetype-html"></i>
-            <i class="falling-icon bi bi-filetype-css"></i>
-            <i class="falling-icon bi bi-filetype-js"></i>
-            <i class="falling-icon bi bi-phone"></i>
-            <i class="falling-icon bi bi-bootstrap"></i>
-            <i class="falling-icon bi bi-wind"></i>
-            <i class="falling-icon bi bi-git"></i>
-            <i class="falling-icon bi bi-github"></i>
-            <i class="falling-icon bi bi-people-fill"></i>
-            <i class="falling-icon bi bi-arrow-repeat"></i>
-            <i class="falling-icon bi bi-code-square"></i>
-            <i class="falling-icon bi bi-android2"></i>
-            <i class="falling-icon bi bi-filetype-html"></i>
-            <i class="falling-icon bi bi-filetype-css"></i>
-            <i class="falling-icon bi bi-filetype-js"></i>
-            <i class="falling-icon bi bi-phone"></i>
-            <i class="falling-icon bi bi-bootstrap"></i>
-            <i class="falling-icon bi bi-wind"></i>
-            <i class="falling-icon bi bi-git"></i>
-            <i class="falling-icon bi bi-github"></i>
-        </div>
-
         <div class="container" data-aos="fade-up">
             <h1 class="display-3 hero-title"><span id="typed-text-prefix"></span><span id="typed-text"></span></h1>
             <p class="lead hero-subtitle">Selamat datang di portofolio digital saya. Saya bersemangat dan antusias tentang pengembangan web dan desain kreatif.</p>
-            <a href="html/projects.html" class="btn btn-peek btn-custom-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="200">Lihat Projek Saya</a>
+            <a href="#projects-section" class="btn btn-peek btn-custom-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="200">Lihat Projek Saya</a>
             <a href="#quick-about" class="btn btn-peek btn-custom-secondary btn-lg mt-4 ms-md-3" data-aos="fade-up" data-aos-delay="400">Tentang Saya</a>
         </div>
     </header>
@@ -78,8 +58,7 @@
                 <div class="col-lg-6" data-aos="fade-right">
                     <h2 class="section-title text-start">Sedikit Tentang Saya</h2>
                     <p class="text-muted"> saya adalah mahasiswa D3 Teknik Informatika Politeknik Elektronika Negeri Surabaya dengan minat tinggi pada bidang UI/UX designer dan Frontend Web development.
-                        Terbiasa menggunakan HTML, CSS, FLutter dan framework seperti BootStrap dan TailwindCSS. Aktif dalam proyek kampus dan kegiatan kampus.</p>
-                    <p class="text-muted">Saya mahir dalam membangun tampilan web yang interaktif dan estetis dengan HTML, CSS, Flutter, Bootstrap, dan TailwindCSS. Motivasi saya yang tinggi dan keterlibatan aktif dalam proyek serta kegiatan kampus,
+                        Terbiasa menggunakan HTML, CSS, FLutter dan framework seperti BootStrap dan TailwindCSS. Aktif dalam proyek kampus dan kegiatan kampus. Saya mahir dalam membangun tampilan web yang interaktif dan estetis dengan HTML, CSS, Flutter, Bootstrap, dan TailwindCSS. Motivasi saya yang tinggi dan keterlibatan aktif dalam proyek serta kegiatan kampus,
                         membuktikan komitmen saya untuk terus belajar dan menerapkan teknologi terbaru dalam memecahkan tantangan dunia nyata.</p>
                     <div class="mt-4">
                         <a href="assets/CV Rasyidatur Rahma.pdf" class="btn btn-peek btn-custom-primary" target="_blank">Unduh CV Saya</a>
@@ -94,8 +73,7 @@
                                 <p class="profile-overlay-text">Salam kenal</p>
                                 <p class="profile-overlay-text">Aku Rasyidatur Rahma (Syida)</p>
                                 <p class="profile-overlay-text">Mahasiswi D3 IT PENS Semester 4</p>
-                                <a href="#footer-section" class="btn btn-sm btn-custom-light mt-2 profile-contact-btn">Kontak Saya</a>
-                            </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -161,8 +139,205 @@
         <div class="container" data-aos="fade-up">
             <h2 class="display-5"><strong>Lihat Apa yang Sudah Saya Bangun</strong></h2>
             <p class="lead my-4">Lihat bagaimana saya menggabungkan logika frontend dan estetika desain <br> dalam setiap aplikasi dan situs web yang saya kerjakan</p>
+            <a href="#projects-section" class="btn btn-peek btn-custom-outline-light btn-lg ms-md-3">Lihat Projek Saya</a>
+        </div>
+    </section>
+
+    <header id="projects-section" class="hero-section project-header d-flex align-items-center justify-content-center text-center">
+
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-3 hero-title">Projek Saya</h1>
+            <p class="lead hero-subtitle">Beberapa karya yang telah saya buat. Arahkan kursor pada gambar untuk info singkat.</p>
+        </div>
+    </header>
+
+    <section class="py-5 section-bg-light">
+        <div class="container">
+
+            <div class="project-category" data-aos="fade-up">
+                <div class="row justify-content-center" id="website-projects">
+                    <div class="col-md-6 mb-4 project-item">
+                        <div class="card project-card h-100">
+                            <div class="project-card-img-container">
+                                <img src="assets/Screenshot (370).png" class="card-img-top" alt="Portofolio Pribadi">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <p class="project-overlay-category">Website</p>
+                                        <h5 class="project-overlay-title">Trivium Akademika</h5>
+                                        <p class="project-overlay-description">Deskripsi: Aplikasi FRS mahasiswa untuk memudahkan pengambilan mata kuliah.</p>
+                                        <p class="project-overlay-contribution">Kontribusi: Sebagai UI/UX Designer & Frontend Developer.</p>
+                                        <p class="project-overlay-tech">Teknologi: HTML, CSS, JavaScript</p>
+                                        <p class="project-overlay-tools">Tools: Git, GitHub, VS Code</p>
+                                        <a href="https://github.com/rsyidatr" target="_blank" class="btn btn-sm btn-custom-outline mt-3 project-github-link">
+                                            <i class="bi bi-github"></i> Lihat di GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 project-item">
+                        <div class="card project-card h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/800x600/B2C8BA/FFFFFF?text=Website+Projek+2" class="card-img-top" alt="Aplikasi Web Inovatif">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <p class="project-overlay-category">Website</p>
+                                        <h5 class="project-overlay-title">Aplikasi Web Inovatif</h5>
+                                        <p class="project-overlay-description">Deskripsi: [Deskripsi singkat aplikasi Anda]</p>
+                                        <p class="project-overlay-contribution">Kontribusi: [Kontribusi Anda]</p>
+                                        <p class="project-overlay-tech">Teknologi: React, Node.js, MongoDB</p>
+                                        <p class="project-overlay-tools">Tools: Git, npm, VS Code</p>
+                                        <a href="https://github.com/rsyidatr" target="_blank" class="btn btn-sm btn-custom-outline mt-3 project-github-link">
+                                            <i class="bi bi-github"></i> Lihat di GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 project-item project-item-hidden">
+                        <div class="card project-card h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/800x600/9CB8AC/FFFFFF?text=Website+Projek+3" class="card-img-top" alt="Website E-commerce">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <p class="project-overlay-category">Website</p>
+                                        <h5 class="project-overlay-title">Website E-commerce</h5>
+                                        <p class="project-overlay-description">Deskripsi: [Deskripsi singkat aplikasi Anda]</p>
+                                        <p class="project-overlay-contribution">Kontribusi: [Kontribusi Anda]</p>
+                                        <p class="project-overlay-tech">Teknologi: PHP, MySQL, Bootstrap</p>
+                                        <p class="project-overlay-tools">Tools: Git, PhpMyAdmin, VS Code</p>
+                                        <a href="https://github.com/rsyidatr" target="_blank" class="btn btn-sm btn-custom-outline mt-3 project-github-link">
+                                            <i class="bi bi-github"></i> Lihat di GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 project-item project-item-hidden">
+                        <div class="card project-card h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/800x600/A7C9A7/FFFFFF?text=Website+Projek+4" class="card-img-top" alt="Blog Pribadi CMS">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <p class="project-overlay-category">Website</p>
+                                        <h5 class="project-overlay-title">Blog Pribadi CMS</h5>
+                                        <p class="project-overlay-description">Deskripsi: [Deskripsi singkat aplikasi Anda]</p>
+                                        <p class="project-overlay-contribution">Kontribusi: [Kontribusi Anda]</p>
+                                        <p class="project-overlay-tech">Teknologi: WordPress, Elementor</p>
+                                        <p class="project-overlay-tools">Tools: cPanel, FTP Client</p>
+                                        <a href="https://github.com/rsyidatr" target="_blank" class="btn btn-sm btn-custom-outline mt-3 project-github-link">
+                                            <i class="bi bi-github"></i> Lihat di GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-custom-outline show-more-btn" data-target="#website-projects">
+                        <span>Tampilkan Lebih Banyak</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-category mt-5 pt-4" data-aos="fade-up">
+                <div class="row justify-content-center" id="mobile-projects">
+                     <div class="col-md-4 col-lg-3 mb-4 project-item">
+                        <div class="card project-card project-card--mobile h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/400x800/B2C8BA/FFFFFF?text=Mobile+App+1" class="card-img-top" alt="Aplikasi Mobile 1">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <p class="project-overlay-category">Mobile</p>
+                                        <h5 class="project-overlay-title">Aplikasi Mobile 1</h5>
+                                        <p class="project-overlay-description">Deskripsi: [Deskripsi singkat aplikasi Anda]</p>
+                                        <p class="project-overlay-contribution">Kontribusi: [Kontribusi Anda]</p>
+                                        <p class="project-overlay-tech">Teknologi: Flutter, Firebase</p>
+                                        <p class="project-overlay-tools">Tools: Android Studio, Git</p>
+                                        <a href="https://github.com/rsyidatr" target="_blank" class="btn btn-sm btn-custom-outline mt-3 project-github-link">
+                                            <i class="bi bi-github"></i> Lihat di GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4 project-item">
+                        <div class="card project-card project-card--mobile h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/400x800/9CB8AC/FFFFFF?text=Mobile+App+2" class="card-img-top" alt="Aplikasi Mobile 2">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <p class="project-overlay-category">Mobile</p>
+                                        <h5 class="project-overlay-title">Aplikasi Mobile 2</h5>
+                                        <p class="project-overlay-description">Deskripsi: [Deskripsi singkat aplikasi Anda]</p>
+                                        <p class="project-overlay-contribution">Kontribusi: [Kontribusi Anda]</p>
+                                        <p class="project-overlay-tech">Teknologi: Flutter, Dart</p>
+                                        <p class="project-overlay-tools">Tools: Android Studio, Git</p>
+                                        <a href="https://github.com/rsyidatr" target="_blank" class="btn btn-sm btn-custom-outline mt-3 project-github-link">
+                                            <i class="bi bi-github"></i> Lihat di GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4 project-item project-item-hidden">
+                        <div class="card project-card project-card--mobile h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/400x800/A7C9A7/FFFFFF?text=Mobile+App+3" class="card-img-top" alt="Aplikasi Mobile 3">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <p class="project-overlay-category">Mobile</p>
+                                        <h5 class="project-overlay-title">Aplikasi Mobile 3</h5>
+                                        <p class="project-overlay-description">Deskripsi: [Deskripsi singkat aplikasi Anda]</p>
+                                        <p class="project-overlay-contribution">Kontribusi: [Kontribusi Anda]</p>
+                                        <p class="project-overlay-tech">Teknologi: Flutter</p>
+                                        <p class="project-overlay-tools">Tools: Android Studio, Git</p>
+                                        <a href="https://github.com/rsyidatr" target="_blank" class="btn btn-sm btn-custom-outline mt-3 project-github-link">
+                                            <i class="bi bi-github"></i> Lihat di GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4 project-item project-item-hidden">
+                        <div class="card project-card project-card--mobile h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/400x800/8FBC8F/FFFFFF?text=Mobile+App+4" class="card-img-top" alt="Aplikasi Mobile 4">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <p class="project-overlay-category">Mobile</p>
+                                        <h5 class="project-overlay-title">Aplikasi Mobile 4</h5>
+                                        <p class="project-overlay-description">Deskripsi: [Deskripsi singkat aplikasi Anda]</p>
+                                        <p class="project-overlay-contribution">Kontribusi: [Kontribusi Anda]</p>
+                                        <p class="project-overlay-tech">Teknologi: Flutter, API</p>
+                                        <p class="project-overlay-tools">Tools: Android Studio, Postman</p>
+                                        <a href="https://github.com/rsyidatr" target="_blank" class="btn btn-sm btn-custom-outline mt-3 project-github-link">
+                                            <i class="bi bi-github"></i> Lihat di GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 </div>
+        </div>
+    </section>
+    <section class="cta-section text-white text-center py-5">
+        
+        <div class="container" data-aos="fade-up">
+            <h2 class="display-5">Tertarik untuk Berkolaborasi?</h2>
+            <p class="lead my-4"><strong>Saya selalu terbuka untuk diskusi mengenai projek menarik atau peluang baru.</strong></p>
             <a href="#footer-section" class="btn btn-peek btn-custom-light btn-lg">Kontak Saya</a>
-            <a href="html/projects.html" class="btn btn-peek btn-custom-outline-light btn-lg ms-md-3">Lihat Projek Saya</a>
+            <a href="#projects-section" class="btn btn-peek btn-custom-outline-light btn-lg ms-md-3">Lihat Projek Saya</a>
         </div>
     </section>
 
@@ -176,8 +351,9 @@
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-heading">Akses Cepat</h5>
                     <ul class="footer-links">
-                        <li><a href="index.html">Beranda</a></li>
-                        <li><a href="html/projects.html">Projek</a></li>
+                        <li><a href="#home-section">Beranda</a></li>
+                        <li><a href="#projects-section">Projek</a></li>
+                        <li><a href="#footer-section">Kontak</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4">
@@ -209,5 +385,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/global.js" defer></script>
     <script src="js/index.js" defer></script>
+    <script src="js/project.js" defer></script>
 </body>
 </html>
