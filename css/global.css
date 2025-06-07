@@ -573,28 +573,15 @@ section {
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--sage-green-darker);
-}
-
-.loading-bar-container {
-    width: 300px;
-    height: 8px;
-    background-color: rgba(var(--sage-green-rgb), 0.2);
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 0 auto;
-}
-
-.loading-bar {
-    width: 0;
-    height: 100%;
-    background: var(--primary-gradient);
-    border-radius: 4px;
-    animation: fillProgressBar 2s ease-in-out forwards;
-}
-
-@keyframes fillProgressBar {
-    from { width: 0%; }
-    to { width: 100%; }
+    /* NEW: Text fill effect for loading progress */
+    background: linear-gradient(to right, var(--sage-green-darker) var(--text-fill-progress, 0%), #ffffff var(--text-fill-progress, 0%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for browsers not supporting -webkit-text-fill-color */
+    transition: background-position 0.1s linear; /* Smooth transition for the fill */
+    background-size: 200% 100%; /* Ensure gradient covers full width for fill */
+    background-position-x: 100%; /* Start with only white visible, gradient fills from left */
 }
 
 /* NEW: Fountain Icon styles for loading screen */

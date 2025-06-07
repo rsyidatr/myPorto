@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // === KODE LOADING SCREEN SEKALI TAYANG ===
     const loadingOverlay = document.getElementById('loading-overlay');
     const fountainContainer = document.querySelector('.fountain-icons-container');
+    const loadingTextProgress = document.getElementById('loading-text-progress'); // Get the text element
 
     // List of skills and tools for the fountain animation
     const fountainIcons = [
@@ -64,11 +65,27 @@ document.addEventListener('DOMContentLoaded', function() {
             fountainInterval = setInterval(createFountainIcon, 100); // Create an icon every 100ms
 
             window.addEventListener('load', () => {
-                setTimeout(() => {
-                    loadingOverlay.classList.add('hidden');
-                    clearInterval(fountainInterval); // Stop creating icons
-                    sessionStorage.setItem('hasAlreadyLoaded', 'true');
-                }, 2200); // Match loading bar animation duration + small buffer
+                // Simulate loading progress for the text fill effect
+                let progress = 0;
+                const totalDuration = 2200; // Total time for the loading animation
+                const intervalTime = 20; // Update every 20ms
+                const steps = totalDuration / intervalTime;
+                let currentStep = 0;
+
+                const loadingTextInterval = setInterval(() => {
+                    currentStep++;
+                    progress = (currentStep / steps) * 100;
+                    loadingTextProgress.style.setProperty('--text-fill-progress', `${progress}%`);
+
+                    if (progress >= 100) {
+                        clearInterval(loadingTextInterval);
+                        setTimeout(() => {
+                            loadingOverlay.classList.add('hidden');
+                            clearInterval(fountainInterval); // Stop creating icons
+                            sessionStorage.setItem('hasAlreadyLoaded', 'true');
+                        }, 200); // Small buffer after text fill completes
+                    }
+                }, intervalTime);
             });
         }
     }
