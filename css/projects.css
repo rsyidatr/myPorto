@@ -1,6 +1,6 @@
 /* Projects Page Specific Styles */
 .project-card {
-    border: none;
+    border: 1px solid var(--sage-green-darker); /* Tambahkan bingkai hijau */
     border-radius: 12px;
     box-shadow: 0 6px 25px var(--shadow-color);
     overflow: hidden;
@@ -8,9 +8,9 @@
     background-color: var(--white);
 }
 
-/* Adds extra vertical space ONLY to web project cards */
+/* Removes extra vertical space ONLY to web project cards */
 .project-card:not(.project-card--mobile) {
-    padding-bottom: 30px;
+    padding-bottom: 0; /* Hapus padding-bottom */
 }
 
 
@@ -22,7 +22,7 @@
 /* Base styles for image container */
 .project-card-img-container {
     overflow: hidden;
-    height: 250px; 
+    height: 250px; /* Tinggi default untuk gambar web */
     position: relative;
     cursor: pointer;
     background-color: var(--lighter-background);
@@ -38,7 +38,7 @@
 
 /* Specific styles for Mobile project cards */
 .project-card--mobile .project-card-img-container {
-    height: 450px; /* Taller container for portrait images */
+    height: 450px; /* Dipertahankan tinggi untuk rasio vertikal yang kuat dengan lebar yang lebih kecil */
 }
 
 .project-card--mobile .card-img-top {
@@ -218,7 +218,7 @@
         height: 200px;
     }
     .project-card--mobile .project-card-img-container {
-        height: 350px;
+        height: 350px; /* Reduced height for better proportion on small screens */
     }
     .project-item { 
         margin-bottom: 1.5rem;
