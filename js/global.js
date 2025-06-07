@@ -1,5 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // === KODE BARU: LOGIKA LOADING SCREEN SEKALI TAYANG ===
+    const loadingOverlay = document.getElementById('loading-overlay');
+
+    // Cek apakah elemen loading screen ada di halaman ini (hanya ada di index.html)
+    if (loadingOverlay) {
+        // Cek sessionStorage apakah layar ini sudah pernah ditampilkan di sesi ini
+        if (sessionStorage.getItem('hasAlreadyLoaded')) {
+            // Jika sudah, sembunyikan langsung tanpa animasi
+            loadingOverlay.style.display = 'none';
+        } else {
+            // Jika ini kunjungan pertama, tunggu semua aset (gambar, css) selesai dimuat
+            window.addEventListener('load', () => {
+                // Tunggu animasi loading bar selesai, lalu sembunyikan dengan efek fade out
+                setTimeout(() => {
+                    loadingOverlay.classList.add('hidden');
+                    // Tandai di sessionStorage bahwa layar pemuatan sudah ditampilkan
+                    sessionStorage.setItem('hasAlreadyLoaded', 'true');
+                }, 2200); // Waktu harus sedikit lebih lama dari animasi loading-bar
+            });
+        }
+    }
+    // === AKHIR KODE BARU ===
+
+
     // Inisialisasi AOS (Animate On Scroll)
     if (typeof AOS !== 'undefined') {
         AOS.init({

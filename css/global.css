@@ -375,3 +375,104 @@ section {
         margin-bottom: 1rem; /* Spacing for stacked skill items */
     }
 }
+
+/* === KODE BARU: LOADING OVERLAY === */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #F7F9F7, #DCE9D9); /* Latar belakang gradien lembut */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.75s ease-out, visibility 0.75s ease-out;
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+}
+
+#loading-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-content {
+    text-align: center;
+    z-index: 9998; /* Di atas ikon */
+    color: var(--dark-text);
+    position: relative;
+}
+
+.loading-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--sage-green-darker);
+}
+
+.loading-bar-container {
+    width: 300px;
+    height: 8px;
+    background-color: rgba(var(--sage-green-rgb), 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.loading-bar {
+    width: 0;
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: 4px;
+    animation: fillProgressBar 2s ease-in-out forwards;
+}
+
+@keyframes fillProgressBar {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+/* Ikon Melayang */
+.loading-icons i {
+    position: absolute;
+    font-size: 3rem;
+    color: rgba(var(--sage-green-rgb), 0.5);
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 9997; /* Di bawah teks loading */
+    top: -50px; /* Mulai dari luar layar */
+}
+
+/* Posisi dan durasi animasi untuk setiap ikon */
+.loading-icons i:nth-child(1) { top: 10%; left: 15%; animation-duration: 15s; animation-delay: 0s; }
+.loading-icons i:nth-child(2) { top: 20%; left: 80%; animation-duration: 12s; animation-delay: -3s; }
+.loading-icons i:nth-child(3) { top: 70%; left: 10%; animation-duration: 18s; animation-delay: -5s; }
+.loading-icons i:nth-child(4) { top: 80%; left: 75%; animation-duration: 10s; animation-delay: -8s; }
+.loading-icons i:nth-child(5) { top: 50%; left: 50%; animation-duration: 16s; animation-delay: -2s; }
+.loading-icons i:nth-child(6) { top: 30%; left: 30%; animation-duration: 13s; animation-delay: -10s; }
+.loading-icons i:nth-child(7) { top: 60%; left: 90%; animation-duration: 11s; animation-delay: -4s; }
+.loading-icons i:nth-child(8) { top: 90%; left: 25%; animation-duration: 17s; animation-delay: -6s; }
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.5; }
+    50% { transform: translateY(-25px) translateX(15px) rotate(180deg); opacity: 0.8; }
+    100% { transform: translateY(0) translateX(0) rotate(360deg); opacity: 0.5; }
+}
+
+/* Responsif untuk layar loading */
+@media (max-width: 767.98px) {
+    .loading-title {
+        font-size: 1.8rem;
+    }
+    .loading-bar-container {
+        width: 250px;
+    }
+    .loading-icons i {
+        font-size: 2.5rem;
+    }
+}
