@@ -1,10 +1,12 @@
 /* Hero Section (index.html) */
 .hero-section {
     min-height: 85vh; 
-    background: var(--light-sage-accent); /* UPDATED */
-    color: var(--dark-text);
+    background: var(--primary-gradient);
+    background-size: 200% 200%;
+    animation: gradientBackground 15s ease infinite alternate;
+    color: var(--white);
     position: relative;
-    overflow: hidden; /* Prevent any overflow from pseudo-elements */
+    overflow: hidden;
 }
 
 /* Optional: Add subtle shapes or patterns to hero */
@@ -15,12 +17,12 @@
     left: 5%;
     width: 200px;
     height: 200px;
-    background: rgba(var(--sage-green-rgb), 0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     filter: blur(50px);
     opacity: 0.7;
     animation: floatShape 15s ease-in-out infinite alternate;
-    z-index: 0; /* Ensure shapes are behind content */
+    z-index: 0;
 }
 .hero-section::after {
     content: '';
@@ -29,16 +31,16 @@
     right: 10%;
     width: 150px;
     height: 150px;
-    background: rgba(var(--sage-green-rgb), 0.15);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Blob shape */
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     filter: blur(40px);
     opacity: 0.8;
     animation: floatShapeReverse 18s ease-in-out infinite alternate;
-    z-index: 0; /* Ensure shapes are behind content */
+    z-index: 0;
 }
 .hero-section .container {
-    position: relative; /* Ensure content is above pseudo-elements */
-    z-index: 1;
+    position: relative;
+    z-index: 1; 
 }
 
 
@@ -54,89 +56,84 @@
 }
 
 .hero-title {
-    font-size: 3.8rem; /* Increased size */
-    font-weight: 700; /* Bolder */
+    font-size: 3.8rem;
+    font-weight: 700;
     margin-bottom: 1.2rem;
-    color: var(--dark-text); /* Ensured dark text for contrast */
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.2); /* Subtle light shadow if background is darker */
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 .hero-subtitle {
-    font-size: 1.4rem; /* Increased size */
-    color: var(--muted-text); /* Using muted text color for better hierarchy */
-    max-width: 650px; /* Wider */
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.8; /* More spacing for subtitle */
+    line-height: 1.8;
+    font-weight: 500;
 }
 #typed-text-prefix {
     font-weight: 400; 
 }
 #typed-text {
-    font-weight: 700; /* Ensure name is bold */
-    color: var(--sage-green-darker); /* Accent color for name */
+    font-weight: 700;
+    color: var(--white);
 }
 
 
 /* Quick About Section (index.html) */
 .profile-img-home {
-    border: 6px solid rgba(var(--sage-green-rgb), 0.3); /* Thicker, softer border */
+    border: 6px solid rgba(var(--sage-green-rgb), 0.3);
     transition: transform var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing), border-color var(--transition-speed) var(--transition-easing);
-    width: 320px; /* Slightly larger */
+    width: 320px;
     height: 320px;
     object-fit: cover;
-    box-shadow: 0 8px 25px var(--shadow-color); /* Initial shadow */
+    box-shadow: 0 8px 25px var(--shadow-color);
 }
 .profile-img-home:hover {
-    transform: scale(1.07) rotate(2deg); /* More dynamic hover */
-    box-shadow: 0 12px 35px var(--shadow-color-hover), 0 0 0 10px rgba(var(--sage-green-rgb), 0.1); /* Glow effect */
+    transform: scale(1.07) rotate(2deg);
+    box-shadow: 0 12px 35px var(--shadow-color-hover), 0 0 0 10px rgba(var(--sage-green-rgb), 0.1);
     border-color: rgba(var(--sage-green-rgb), 0.5);
-}
-
-/* Gaya untuk tombol "Unduh CV Saya" */
-#quick-about .btn-custom-primary {
-    background: var(--sage-green-darker);
-    border: none;
-}
-
-/* Gaya hover untuk tombol "Unduh CV Saya" */
-#quick-about .btn-custom-primary:hover {
-    background: var(--white);
-    color: var(--sage-green-darker);
-    border: 2px solid var(--sage-green-darker);
 }
 
 
 /* Skills and Tools Section (index.html) */
 .skill-tool-card {
     background-color: var(--white);
-    padding: 1.25rem 0.75rem; /* Adjusted padding */
+    padding: 1.25rem 0.75rem;
     border-radius: 10px;
-    box-shadow: 0 4px 15px var(--shadow-color); /* Consistent shadow */
+    box-shadow: 0 4px 15px var(--shadow-color);
     transition: transform var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing);
     height: 100%; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--light-sage-accent); /* Subtle border */
+    border: 1px solid var(--light-sage-accent);
 }
 .skill-tool-card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 10px 30px var(--shadow-color-hover);
 }
 .skill-tool-icon {
-    font-size: 2.8rem; /* Larger icons */
+    font-size: 2.8rem;
     color: var(--sage-green-darker);
     margin-bottom: 0.75rem;
     transition: color var(--transition-speed) var(--transition-easing);
 }
+
+/* Aturan ukuran untuk ikon SVG */
+svg.skill-tool-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
 .skill-tool-card:hover .skill-tool-icon {
     color: var(--sage-green);
 }
 .skill-tool-name {
     font-weight: 500;
     color: var(--dark-text);
-    font-size: 0.85rem; /* Slightly smaller name for better fit */
+    font-size: 0.85rem;
     margin-bottom: 0;
     line-height: 1.3;
 }
@@ -144,86 +141,205 @@
 /* Memperbesar sub-judul di section keahlian */
 #skills-and-tools .accent-heading {
     font-size: 1.7rem;
-    margin-bottom: 1.5rem; /* Menambah jarak bawah */
+    margin-bottom: 1.5rem;
 }
 
 /* =================================================================== */
-/* PERBAIKAN SPESIFIK: Efek Tombol Hero Section                        */
+/* GAYA TOMBOL HERO SECTION                                            */
 /* =================================================================== */
-
-/* Aturan ini memaksa tombol untuk menggunakan transisi yang cepat (0.3s),
-   mengalahkan transisi lambat (1s) dari library animasi AOS. */
 .hero-section .btn {
     transition: all var(--transition-speed) var(--transition-easing) !important;
+    border-width: 2px;
+    font-weight: 600;
 }
 
-/* Aturan hover spesifik ini dipertahankan untuk menjamin efek
-   mengambang berjalan tanpa konflik. State :focus sudah ditangani global.css */
-.hero-section .btn-custom-primary:hover,
+/* Tombol Primer ("Lihat Projek Saya") */
+.hero-section .btn-custom-primary,
+.hero-section .btn-custom-primary:focus {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+    box-shadow: none;
+    transform: none; 
+}
+.hero-section .btn-custom-primary:hover {
+    background-color: var(--white);
+    border-color: var(--white);
+    color: #8FBC8F; 
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* Tombol Sekunder ("Tentang Saya") */
+.hero-section .btn-custom-secondary,
+.hero-section .btn-custom-secondary:focus {
+    background-color: var(--white);
+    border-color: var(--white);
+    color: #8FBC8F;
+    transform: none;
+}
 .hero-section .btn-custom-secondary:hover {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
     transform: translateY(-6px) scale(1.02);
 }
 
 
 /* Responsif Index */
 @media (max-width: 991.98px) {
-    .hero-title {
-        font-size: 2.8rem !important; /* Ensure override */
-    }
-    .hero-subtitle {
-        font-size: 1.2rem !important; /* Ensure override */
-    }
-    .profile-img-home {
-        width: 280px;
-        height: 280px;
-    }
-    .skill-tool-icon {
-        font-size: 2.5rem;
-    }
-    .skill-tool-name {
-        font-size: 0.8rem;
-    }
+    .hero-title { font-size: 2.8rem !important; }
+    .hero-subtitle { font-size: 1.2rem !important; }
+    .profile-img-home { width: 280px; height: 280px; }
+    .skill-tool-icon { font-size: 2.5rem; }
+    svg.skill-tool-icon { width: 2.5rem; height: 2.5rem; }
+    .skill-tool-name { font-size: 0.8rem; }
 }
 
 @media (max-width: 767.98px) {
-    .hero-section {
-        min-height: 70vh;
-    }
-    .hero-title {
-        font-size: 2.2rem !important; /* Ensure override */
-    }
-    .hero-subtitle {
-        font-size: 1rem !important; /* Ensure override */
-        max-width: 90%;
-    }
-    .profile-img-home {
-        width: 220px; /* Smaller on mobile */
-        height: 220px;
-        margin-bottom: 1.5rem; /* Space below image if it wraps in quick-about */
-    }
-    #quick-about .col-lg-6 { /* Ensure text in quick-about is centered on mobile if it wraps weirdly */
-        text-align: center;
-    }
-    #quick-about .section-title.text-start::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
-     .skill-tool-card {
-        padding: 1rem 0.5rem;
-    }
-    .skill-tool-icon {
-        font-size: 2.2rem;
-    }
-    .skill-tool-name {
-        font-size: 0.75rem;
-    }
-    
-    .hero-section .btn-custom-primary, .hero-section .btn-custom-secondary {
-        margin-bottom: 0.5rem; /* Stack buttons better on mobile */
-        width: auto; /* Allow buttons to size naturally or set to 100% if preferred */
-        display: inline-block; /* Ensure they don't take full width by default if stacked */
-    }
-     .hero-section .btn-custom-secondary.ms-md-3 {
-        margin-left: 0 !important; /* Remove margin for mobile stacking */
-    }
+    .hero-section { min-height: 70vh; }
+    .hero-title { font-size: 2.2rem !important; }
+    .hero-subtitle { font-size: 1rem !important; max-width: 90%; }
+    .profile-img-home { width: 220px; height: 220px; margin-bottom: 1.5rem; }
+    #quick-about .col-lg-6 { text-align: center; }
+    #quick-about .section-title.text-start::after { margin-left: auto; margin-right: auto; }
+    .skill-tool-card { padding: 1rem 0.5rem; }
+    .skill-tool-icon { font-size: 2.2rem; }
+    svg.skill-tool-icon { width: 2.2rem; height: 2.2rem; }
+    .skill-tool-name { font-size: 0.75rem; }
+    .hero-section .btn-custom-primary, .hero-section .btn-custom-secondary { margin-bottom: 0.5rem; width: auto; display: inline-block; }
+    .hero-section .btn-custom-secondary.ms-md-3 { margin-left: 0 !important; }
+}
+
+/* =================================================================== */
+/* WARNA IKON KEAHLIAN DAN TOOLS                                       */
+/* =================================================================== */
+.skill-tool-icon.icon-scrum, .skill-tool-card:hover .skill-tool-icon.icon-scrum { color: #007bff; }
+.skill-tool-icon.icon-agile, .skill-tool-card:hover .skill-tool-icon.icon-agile { color: #28a745; }
+.skill-tool-icon.icon-html, .skill-tool-card:hover .skill-tool-icon.icon-html { color: #E34F26; }
+.skill-tool-icon.icon-css, .skill-tool-card:hover .skill-tool-icon.icon-css { color: #1572B6; }
+.skill-tool-icon.icon-js, .skill-tool-card:hover .skill-tool-icon.icon-js { color: #F7DF1E; }
+.skill-tool-icon.icon-flutter, .skill-tool-card:hover .skill-tool-icon.icon-flutter { color: #027DFD; }
+.skill-tool-icon.icon-bootstrap, .skill-tool-card:hover .skill-tool-icon.icon-bootstrap { color: #7952B3; }
+.skill-tool-icon.icon-tailwind, .skill-tool-card:hover .skill-tool-icon.icon-tailwind { color: #06B6D4; }
+.skill-tool-icon.icon-git, .skill-tool-card:hover .skill-tool-icon.icon-git { color: #F05032; }
+.skill-tool-icon.icon-github, .skill-tool-card:hover .skill-tool-icon.icon-github { color: #181717; }
+.skill-tool-icon.icon-figma, .skill-tool-card:hover .skill-tool-icon.icon-figma { color: #F24E1E; }
+.skill-tool-icon.icon-vscode, .skill-tool-card:hover .skill-tool-icon.icon-vscode { color: #007ACC; }
+.skill-tool-icon.icon-android-studio, .skill-tool-card:hover .skill-tool-icon.icon-android-studio { color: #3DDC84; }
+
+/* =================================================================== */
+/* EFEK IKON BERJATUHAN PADA HERO SECTION                       */
+/* =================================================================== */
+.falling-icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.falling-icon {
+  position: absolute;
+  top: -15%;
+  color: rgba(255, 255, 255, 0.25);
+  animation: fall linear infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0vh) rotateZ(0deg); }
+  100% { transform: translateY(115vh) rotateZ(270deg); }
+}
+
+/* Variasi animasi untuk setiap ikon agar terlihat acak */
+.falling-icon:nth-child(1) { left: 5%; font-size: 1.5rem; animation-duration: 22s; animation-delay: -5s; }
+.falling-icon:nth-child(2) { left: 10%; font-size: 2.5rem; animation-duration: 18s; animation-delay: -2s; }
+.falling-icon:nth-child(3) { left: 15%; font-size: 1.2rem; animation-duration: 28s; animation-delay: -10s; }
+.falling-icon:nth-child(4) { left: 20%; font-size: 2rem; animation-duration: 15s; animation-delay: -18s; }
+.falling-icon:nth-child(5) { left: 25%; font-size: 1.8rem; animation-duration: 25s; animation-delay: -9s; }
+.falling-icon:nth-child(6) { left: 35%; font-size: 2.8rem; animation-duration: 14s; animation-delay: -3s; }
+.falling-icon:nth-child(7) { left: 45%; font-size: 1.4rem; animation-duration: 26s; animation-delay: -1s; }
+.falling-icon:nth-child(8) { left: 55%; font-size: 2.2rem; animation-duration: 17s; animation-delay: -8s; }
+.falling-icon:nth-child(9) { left: 65%; font-size: 3rem; animation-duration: 20s; animation-delay: -4s; }
+.falling-icon:nth-child(10) { left: 75%; font-size: 1.6rem; animation-duration: 23s; animation-delay: -12s; }
+.falling-icon:nth-child(11) { left: 80%; font-size: 2.4rem; animation-duration: 16s; animation-delay: -15s; }
+.falling-icon:nth-child(12) { left: 85%; font-size: 1.3rem; animation-duration: 30s; animation-delay: -6s; }
+.falling-icon:nth-child(13) { left: 90%; font-size: 2rem; animation-duration: 19s; animation-delay: -20s; }
+.falling-icon:nth-child(14) { left: 60%; font-size: 1.8rem; animation-duration: 24s; animation-delay: -14s; }
+.falling-icon:nth-child(15) { left: 40%; font-size: 2.6rem; animation-duration: 21s; animation-delay: -7s; }
+.falling-icon:nth-child(16) { left: 50%; font-size: 1.5rem; animation-duration: 27s; animation-delay: -17s; }
+.falling-icon:nth-child(17) { left: 70%; font-size: 2.3rem; animation-duration: 18s; animation-delay: -19s; }
+.falling-icon:nth-child(18) { left: 30%; font-size: 1.9rem; animation-duration: 22s; animation-delay: -1s; }
+.falling-icon:nth-child(19) { left: 22%; font-size: 2.7rem; animation-duration: 19s; animation-delay: -13s; }
+.falling-icon:nth-child(20) { left: 88%; font-size: 1.7rem; animation-duration: 26s; animation-delay: -9s; }
+
+/* =================================================================== */
+/* EFEK KUCING MENGINTIP & PERBAIKAN BUG GETAR                         */
+/* =================================================================== */
+.btn-peek {
+    position: relative;
+    overflow: visible;
+}
+
+.btn-peek::after {
+    content: '🐱';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 1.6rem;
+    opacity: 0;
+    transform: translateX(-50%) translateY(10%);
+    transition: all var(--transition-speed) ease-out;
+    pointer-events: none;
+}
+
+.btn-peek:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-95%); /* [DISESUAIKAN] Posisi akhir kucing sedikit lebih rendah */
+}
+
+/* Tombol di Section "Quick About" untuk perbaikan bug getar */
+#quick-about .btn {
+    border-width: 2px;
+    border-style: solid; 
+}
+
+#quick-about .btn-custom-primary,
+#quick-about .btn-custom-primary:focus {
+    background: var(--sage-green-darker);
+    border-color: var(--sage-green-darker);
+    color: var(--white);
+    transform: none;
+}
+
+#quick-about .btn-custom-primary:hover {
+    background: var(--white);
+    border-color: var(--sage-green-darker);
+    color: var(--sage-green-darker);
+    transform: translateY(-4px);
+}
+
+#quick-about .btn-custom-outline,
+#quick-about .btn-custom-outline:focus {
+    transform: none;
+}
+#quick-about .btn-custom-outline:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(var(--sage-green-rgb), 0.2);
+}
+
+/* =================================================================== */
+/* GAYA TOMBOL CTA (CALL TO ACTION) SECTION                            */
+/* =================================================================== */
+/* State awal tombol "Kontak Saya" */
+.cta-section .btn-custom-light {
+    color: #8FBC8F; /* Warna hijau tua dari gradien hero */
+}
+
+/* State hover tombol "Kontak Saya" */
+.cta-section .btn-custom-light:hover {
+    color: var(--white); /* Memastikan teks menjadi putih saat hover */
 }

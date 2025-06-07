@@ -230,3 +230,10 @@
         font-size: 1.3rem;
     }
 }
+
+/* [BARU] Aturan untuk mengubah ukuran hero-section di halaman projek */
+.hero-section.project-header {
+    min-height: auto; /* Membatalkan tinggi minimal dari hero-section utama */
+    padding: 6rem 0; /* Menggunakan padding dari .page-header yang asli */
+    margin-bottom: 2.5rem; /* Menggunakan margin dari .page-header yang asli */
+}
