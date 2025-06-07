@@ -30,7 +30,7 @@ body {
     font-family: var(--font-family-sans-serif);
     color: var(--dark-text);
     line-height: 1.75; /* Increased for better readability */
-    padding-top: 70px;
+    /* padding-top: 70px; Dihapus untuk memperbaiki masalah tumpukan dengan navbar sticky */
     background-color: var(--lighter-background);
     transition: background-color var(--transition-speed) var(--transition-easing);
     opacity: 0;
@@ -349,7 +349,7 @@ section {
 
 @media (max-width: 767.98px) {
     body {
-        padding-top: 60px;
+        /* padding-top: 60px; Dihapus untuk memperbaiki masalah tumpukan dengan navbar sticky */
         line-height: 1.65; /* Slightly reduced for smaller screens */
     }
     .btn-lg {
