@@ -141,9 +141,10 @@
 }
 
 .profile-overlay-content {
-    transform: translateY(0); /* Ensure no initial vertical transform */
+    transform: translateY(15px);
     opacity: 0;
     transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+    text-align: center;
     color: var(--dark-text);
     pointer-events: auto; /* Re-enable pointer events for content inside */
 }
@@ -315,22 +316,39 @@ svg.skill-tool-icon {
 /* =================================================================== */
 /* WARNA IKON KEAHLIAN DAN TOOLS                                       */
 /* =================================================================== */
-.skill-tool-icon.icon-scrum, .skill-tool-card:hover .skill-tool-icon.icon-scrum { color: #007bff; }
-.skill-tool-icon.icon-agile, .skill-tool-card:hover .skill-tool-icon.icon-agile { color: #28a745; }
-.skill-tool-icon.icon-html, .skill-tool-card:hover .skill-tool-icon.icon-html { color: #E34F26; }
-.skill-tool-icon.icon-css, .skill-tool-card:hover .skill-tool-icon.icon-css { color: #1572B6; }
-.skill-tool-icon.icon-js, .skill-tool-card:hover .skill-tool-icon.icon-js { color: #F7DF1E; }
-.skill-tool-icon.icon-flutter, .skill-tool-card:hover .skill-tool-icon.icon-flutter { color: #027DFD; }
-.skill-tool-icon.icon-bootstrap, .skill-tool-card:hover .skill-tool-icon.icon-bootstrap { color: #7952B3; }
-.skill-tool-icon.icon-tailwind, .skill-tool-card:hover .skill-tool-icon.icon-tailwind { color: #06B6D4; }
-.skill-tool-icon.icon-git, .skill-tool-card:hover .skill-tool-icon.icon-git { color: #F05032; }
-.skill-tool-icon.icon-github, .skill-tool-card:hover .skill-tool-icon.icon-github { color: #181717; }
-.skill-tool-icon.icon-figma, .skill-tool-card:hover .skill-tool-icon.icon-figma { color: #F24E1E; }
-.skill-tool-icon.icon-vscode, .skill-tool-card:hover .skill-tool-icon.icon-vscode { color: #007ACC; }
-.skill-tool-icon.icon-android-studio, .skill-tool-card:hover .skill-tool-icon.icon-android-studio { color: #3DDC84; }
+/* Ini adalah definisi warna untuk ikon, akan digunakan oleh falling-icon juga */
+.icon-scrum { color: #007bff; }
+.icon-agile { color: #28a745; }
+.icon-html { color: #E34F26; }
+.icon-css { color: #1572B6; }
+.icon-js { color: #F7DF1E; }
+.icon-flutter { color: #027DFD; }
+.icon-bootstrap { color: #7952B3; }
+.icon-tailwind { color: #06B6D4; }
+.icon-git { color: #F05032; }
+.icon-github { color: #181717; }
+.icon-figma { color: #F24E1E; }
+.icon-vscode { color: #007ACC; }
+.icon-android-studio { color: #3DDC84; }
+
+/* Mengatur warna hover untuk skill-tool-card tetap sama */
+.skill-tool-card:hover .skill-tool-icon.icon-scrum { color: #007bff; }
+.skill-tool-card:hover .skill-tool-icon.icon-agile { color: #28a745; }
+.skill-tool-card:hover .skill-tool-icon.icon-html { color: #E34F26; }
+.skill-tool-card:hover .skill-tool-icon.icon-css { color: #1572B6; }
+.skill-tool-card:hover .skill-tool-icon.icon-js { color: #F7DF1E; }
+.skill-tool-card:hover .skill-tool-icon.icon-flutter { color: #027DFD; }
+.skill-tool-card:hover .skill-tool-icon.icon-bootstrap { color: #7952B3; }
+.skill-tool-card:hover .skill-tool-icon.icon-tailwind { color: #06B6D4; }
+.skill-tool-card:hover .skill-tool-icon.icon-git { color: #F05032; }
+.skill-tool-card:hover .skill-tool-icon.icon-github { color: #181717; }
+.skill-tool-card:hover .skill-tool-icon.icon-figma { color: #F24E1E; }
+.skill-tool-card:hover .skill-tool-icon.icon-vscode { color: #007ACC; }
+.skill-tool-card:hover .skill-tool-icon.icon-android-studio { color: #3DDC84; }
+
 
 /* =================================================================== */
-/* EFEK IKON BERJATUHAN PADA HERO SECTION                       */
+/* EFEK IKON BERJATUHAN PADA HERO SECTION, PROJECTS, DAN CTA         */
 /* =================================================================== */
 .falling-icons-container {
   position: absolute;
@@ -339,15 +357,17 @@ svg.skill-tool-icon {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0;
+  z-index: 0; /* Pastikan z-index lebih rendah dari konten */
+  pointer-events: none; /* Penting: agar tidak mengganggu interaksi mouse dengan konten di atasnya */
 }
 
 .falling-icon {
   position: absolute;
-  top: -15%;
-  color: rgba(255, 255, 255, 0.25);
+  top: -15%; /* Mulai dari atas layar */
+  /* Mengembalikan warna ikon menjadi putih transparan seperti permintaan */
+  color: rgba(255, 255, 255, 0.25); 
+  /* Opacity tambahan jika diperlukan, tapi rgba(255,255,255,0.25) sudah menangani transparansi */
   animation: fall linear infinite;
-  pointer-events: none;
   user-select: none;
 }
 
