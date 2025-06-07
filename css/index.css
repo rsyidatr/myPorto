@@ -1,6 +1,6 @@
 /* Hero Section (index.html) */
 .hero-section {
-    min-height: 95vh; /* Slightly less than full viewport height */
+    min-height: 85vh; 
     background: var(--light-sage-accent); /* UPDATED */
     color: var(--dark-text);
     position: relative;
@@ -99,6 +99,20 @@
     border-color: rgba(var(--sage-green-rgb), 0.5);
 }
 
+/* Gaya untuk tombol "Unduh CV Saya" */
+#quick-about .btn-custom-primary {
+    background: var(--sage-green-darker);
+    border-color: var(--sage-green-darker);
+}
+
+/* Gaya hover untuk tombol "Unduh CV Saya" */
+#quick-about .btn-custom-primary:hover {
+    background: var(--white);
+    color: var(--sage-green-darker);
+    border-color: var(--sage-green-darker);
+}
+
+
 /* Skills and Tools Section (index.html) */
 .skill-tool-card {
     background-color: var(--white);
@@ -132,6 +146,12 @@
     font-size: 0.85rem; /* Slightly smaller name for better fit */
     margin-bottom: 0;
     line-height: 1.3;
+}
+
+/* Memperbesar sub-judul di section keahlian */
+#skills-and-tools .accent-heading {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem; /* Menambah jarak bawah */
 }
 
 
@@ -177,6 +197,24 @@
 }
 
 
+/* =================================================================== */
+/* PERBAIKAN SPESIFIK: Efek Tombol Hero Section                        */
+/* =================================================================== */
+
+/* Aturan ini memaksa tombol untuk menggunakan transisi yang cepat (0.3s),
+   mengalahkan transisi lambat (1s) dari library animasi AOS. */
+.hero-section .btn {
+    transition: all var(--transition-speed) var(--transition-easing) !important;
+}
+
+/* Aturan hover spesifik ini dipertahankan untuk menjamin efek
+   mengambang berjalan tanpa konflik. State :focus sudah ditangani global.css */
+.hero-section .btn-custom-primary:hover,
+.hero-section .btn-custom-secondary:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+
 /* Responsif Index */
 @media (max-width: 991.98px) {
     .hero-title {
@@ -205,7 +243,7 @@
 
 @media (max-width: 767.98px) {
     .hero-section {
-        min-height: 80vh; /* Adjusted for mobile */
+        min-height: 70vh;
     }
     .hero-title {
         font-size: 2.2rem !important; /* Ensure override */

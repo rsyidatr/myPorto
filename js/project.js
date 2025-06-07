@@ -1,24 +1,56 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Menangani semua modal di halaman proyek
+    
+    // Logic to reset carousel to first slide when modal is closed
     const projectModals = document.querySelectorAll('.modal');
-
     projectModals.forEach(modal => {
-        // Mendengarkan event ketika modal akan disembunyikan
         modal.addEventListener('hidden.bs.modal', function () {
-            
-            // Cari carousel di dalam modal yang baru saja ditutup
             const carouselElement = this.querySelector('.carousel');
-            
-            // Jika ada carousel di dalam modal ini
             if (carouselElement) {
-                // Dapatkan instance Bootstrap Carousel
                 const carousel = bootstrap.Carousel.getInstance(carouselElement);
-                
-                // Jika instance carousel ditemukan, reset ke slide pertama (indeks 0)
                 if (carousel) {
                     carousel.to(0);
                 }
             }
         });
     });
+
+    // New, robust logic for "Show More/Less" buttons
+    const showMoreButtons = document.querySelectorAll('.show-more-btn');
+
+    showMoreButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('expanded');
+
+            const targetSelector = this.dataset.target;
+            const projectContainer = document.querySelector(targetSelector);
+            if (!projectContainer) return;
+
+            const itemsToToggle = projectContainer.querySelectorAll('.project-item-hidden');
+            
+            itemsToToggle.forEach(item => {
+                // Toggle a class that controls visibility and animation
+                item.classList.toggle('is-visible');
+            });
+            
+            // Update button text and icon
+            const buttonText = this.querySelector('span');
+            const buttonIcon = this.querySelector('i');
+
+            if (this.classList.contains('expanded')) {
+                buttonText.textContent = 'Tampilkan Lebih Sedikit';
+                if(buttonIcon) {
+                    buttonIcon.classList.remove('bi-chevron-down');
+                    buttonIcon.classList.add('bi-chevron-up');
+                }
+            } else {
+                buttonText.textContent = 'Tampilkan Lebih Banyak';
+                if(buttonIcon) {
+                    buttonIcon.classList.remove('bi-chevron-up');
+                    buttonIcon.classList.add('bi-chevron-down');
+                }
+            }
+        });
+    });
+
 });

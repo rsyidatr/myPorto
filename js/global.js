@@ -76,9 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (hrefAttribute.length > 1 && document.querySelector(hrefAttribute)) {
                 e.preventDefault();
                 const targetElement = document.querySelector(hrefAttribute);
+                
+                // PERUBAHAN: Mengembalikan ke metode kalkulasi dinamis yang lebih akurat
                 const navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
+                const additionalOffset = 20; // Jarak aman tambahan
                 const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - additionalOffset;
 
                 window.scrollTo({
                     top: offsetPosition,

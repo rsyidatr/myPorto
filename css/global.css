@@ -1,7 +1,7 @@
 /* Variabel Warna Utama */
 :root {
     --sage-green: #B2C8BA; /* Sage Green Utama */
-    --sage-green-darker: #9CB8AC; /* Sage sedikit lebih gelap for hover/accents */
+    --sage-green-darker: #9CB8AC; /* Sage sedikit lebih gelap for hover/accents (WARNA ACUAN) */
     --sage-green-rgb: 178, 200, 186; /* RGB for rgba() */
     --light-sage-accent: #D9EAD3; /* Aksen Sage Muda */
     --lighter-background: #F7F9F7; /* Slightly adjusted for softer feel */
@@ -203,50 +203,60 @@ section {
     padding: 12px 30px; /* Larger padding for lg buttons */
     font-size: 1rem;
 }
+.btn:active {
+    transform: translateY(1px) scale(0.98); /* Efek ditekan */
+}
+.btn:focus {
+    outline: none; /* Menghapus outline default browser */
+}
 
-/* Tombol Primer */
-.btn-custom-primary {
-    background: var(--sage-green);
+/* Tombol Primer ("Lihat Projek Saya") */
+.btn-custom-primary, .btn-custom-primary:focus {
+    background: var(--light-sage-accent); 
     border-color: var(--white);
     color: var(--white);
     padding: 10px 25px;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(var(--sage-green-rgb), 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: none; 
 }
-.btn-custom-primary:hover, .btn-custom-primary:focus {
-    background: var(--lighter-background);
-    border-color: var(--sage-green);
-    color: var(--sage-green);
+.btn-custom-primary:hover {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--sage-green-darker);
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(var(--sage-green-rgb), 0.35);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Tombol Sekunder */
-.btn-custom-secondary {
-    background-color: var(--lighter-background);
-    border-color: var(--sage-green);
-    color: var(--sage-green);
+/* Tombol Sekunder ("Tentang Saya") */
+.btn-custom-secondary, .btn-custom-secondary:focus {
+    background-color: var(--white);
+    border-color: var(--white); 
+    color: var(--sage-green-darker);
     padding: 10px 25px;
     font-weight: 600;
     box-shadow: 0 4px 15px var(--shadow-color);
+    transform: none;
 }
-.btn-custom-secondary:hover, .btn-custom-secondary:focus {
-    background-color: var(--sage-green);
-    border-color: var(--sage-green);
+.btn-custom-secondary:hover {
+    background-color: var(--light-sage-accent);
+    border-color: var(--white);
     color: var(--white);
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(var(--sage-green-rgb), 0.35);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* Tombol Outline */
-.btn-custom-outline {
+.btn-custom-outline, .btn-custom-outline:focus {
     border-color: var(--sage-green-darker);
     color: var(--sage-green-darker);
     padding: 8px 20px;
     font-weight: 600;
     background-color: transparent;
+    box-shadow: none;
+    transform: none;
 }
-.btn-custom-outline:hover, .btn-custom-outline:focus {
+.btn-custom-outline:hover {
     background-color: var(--sage-green-darker);
     border-color: var(--sage-green-darker);
     color: var(--white);
@@ -255,31 +265,34 @@ section {
 }
 
 /* Tombol Terang (CTA) */
-.btn-custom-light {
+.btn-custom-light, .btn-custom-light:focus {
     background: var(--white);
-    border-color: var(--sage-green-darker);
-    color: var(--sage-green-darker);
+    border-color: var(--white); /* PERUBAHAN: Bingkai menjadi putih */
+    color: var(--dark-text);
     padding: 10px 25px;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: none;
 }
-.btn-custom-light:hover, .btn-custom-light:focus {
-    background: var(--primary-gradient); /* UPDATED */
-    border-color: var(--white);
+.btn-custom-light:hover {
+    background: var(--primary-gradient);
+    border-color: var(--white); /* Bingkai tetap putih */
     color: var(--white);
     transform: translateY(-6px) scale(1.02);
     box-shadow: 0 10px 25px rgba(var(--sage-green-rgb), 0.35);
 }
 
 /* Tombol Outline Terang (CTA) */
-.btn-custom-outline-light {
+.btn-custom-outline-light, .btn-custom-outline-light:focus {
     border-color: var(--white);
     color: var(--white);
     padding: 10px 25px;
     font-weight: 600;
     background-color: transparent;
+    box-shadow: none;
+    transform: none;
 }
-.btn-custom-outline-light:hover, .btn-custom-outline-light:focus {
+.btn-custom-outline-light:hover {
     background: var(--white);
     border-color: var(--white);
     color: var(--sage-green-darker);
