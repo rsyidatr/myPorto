@@ -53,13 +53,6 @@
     100% { transform: translateY(0px) translateX(0px) scale(1.1); }
 }
 
-
-@keyframes gradientBackground {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 .hero-title {
     font-size: 3.8rem; /* Increased size */
     font-weight: 700; /* Bolder */
@@ -102,14 +95,14 @@
 /* Gaya untuk tombol "Unduh CV Saya" */
 #quick-about .btn-custom-primary {
     background: var(--sage-green-darker);
-    border-color: var(--sage-green-darker);
+    border: none;
 }
 
 /* Gaya hover untuk tombol "Unduh CV Saya" */
 #quick-about .btn-custom-primary:hover {
     background: var(--white);
     color: var(--sage-green-darker);
-    border-color: var(--sage-green-darker);
+    border: 2px solid var(--sage-green-darker);
 }
 
 
@@ -154,49 +147,6 @@
     margin-bottom: 1.5rem; /* Menambah jarak bawah */
 }
 
-
-/* CTA Section (index.html) */
-.cta-section {
-    background: var(--primary-gradient);
-    background-size: 200% 200%;
-    animation: gradientBackground 15s ease infinite alternate;
-    /* padding handled by global.css section.cta-section */
-    border-radius: 12px; /* Consistent rounding */
-    margin: 2.5rem auto; /* Consistent margin */
-    max-width: calc(100% - 2rem); /* Ensure some spacing on small screens */
-    position: relative;
-    overflow: hidden;
-}
-.cta-section::before { /* Decorative element */
-    content: " ";
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 150px;
-    height: 150px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    opacity: 0.8;
-    filter: blur(30px);
-    z-index: 0; /* Ensure shapes are behind content */
-}
-.cta-section .container {
-    position: relative; /* Ensure content is above pseudo-elements */
-    z-index: 1;
-}
-
-
-.cta-section h2 {
-    color: var(--white);
-    font-size: 2.5rem; /* Larger CTA heading */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-.cta-section p {
-    color: rgba(255, 255, 255, 0.95); /* More opaque text */
-    font-size: 1.2rem; /* Larger CTA paragraph */
-}
-
-
 /* =================================================================== */
 /* PERBAIKAN SPESIFIK: Efek Tombol Hero Section                        */
 /* =================================================================== */
@@ -226,12 +176,6 @@
     .profile-img-home {
         width: 280px;
         height: 280px;
-    }
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-    .cta-section p {
-        font-size: 1.1rem;
     }
     .skill-tool-icon {
         font-size: 2.5rem;
@@ -274,12 +218,6 @@
         font-size: 0.75rem;
     }
     
-    .cta-section h2 {
-        font-size: 1.8rem;
-    }
-    .cta-section p {
-        font-size: 1rem;
-    }
     .hero-section .btn-custom-primary, .hero-section .btn-custom-secondary {
         margin-bottom: 0.5rem; /* Stack buttons better on mobile */
         width: auto; /* Allow buttons to size naturally or set to 100% if preferred */

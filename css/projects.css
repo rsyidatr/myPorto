@@ -8,6 +8,12 @@
     background-color: var(--white);
 }
 
+/* Adds extra vertical space ONLY to web project cards */
+.project-card:not(.project-card--mobile) {
+    padding-bottom: 30px;
+}
+
+
 .project-card:hover {
     transform: translateY(-12px) scale(1.01);
     box-shadow: 0 12px 40px var(--shadow-color-hover);
