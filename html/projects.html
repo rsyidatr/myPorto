@@ -8,7 +8,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/index.css"> 
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/projects.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -37,7 +37,7 @@
     </nav>
 
     <header class="hero-section project-header d-flex align-items-center justify-content-center text-center">
-        
+
         <div class="falling-icons-container" aria-hidden="true">
             <i class="falling-icon bi bi-filetype-html"></i>
             <i class="falling-icon bi bi-filetype-css"></i>
@@ -74,16 +74,56 @@
                 <h2 class="section-title text-center">Projek Website</h2>
                 <div class="row justify-content-center" id="website-projects">
                     <div class="col-md-6 mb-4 project-item">
-                        <div class="card project-card h-100"><div class="project-card-img-container" data-bs-toggle="modal" data-bs-target="#projectModal1"><img src="../assets/Screenshot (370).png" class="card-img-top" alt="Projek 1"><div class="project-image-overlay"><div class="project-overlay-content"><h5 class="project-overlay-title">Portofolio Pribadi</h5><p class="project-overlay-tech">HTML, CSS, JavaScript</p></div></div></div></div>
+                        <div class="card project-card h-100">
+                            <div class="project-card-img-container">
+                                <img src="../assets/Screenshot (370).png" class="card-img-top" alt="Portofolio Pribadi">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5 class="project-overlay-title">Portofolio Pribadi</h5>
+                                        <p class="project-overlay-tech">HTML, CSS, JavaScript</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6 mb-4 project-item">
-                        <div class="card project-card h-100"><div class="project-card-img-container" data-bs-toggle="modal" data-bs-target="#projectModal2"><img src="https://via.placeholder.com/800x600/B2C8BA/FFFFFF?text=Website+Projek+2" class="card-img-top" alt="Projek 2"><div class="project-image-overlay"><div class="project-overlay-content"><h5 class="project-overlay-title">Aplikasi Web Inovatif</h5><p class="project-overlay-tech">React, Node.js, MongoDB</p></div></div></div></div>
+                        <div class="card project-card h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/800x600/B2C8BA/FFFFFF?text=Website+Projek+2" class="card-img-top" alt="Aplikasi Web Inovatif">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5 class="project-overlay-title">Aplikasi Web Inovatif</h5>
+                                        <p class="project-overlay-tech">React, Node.js, MongoDB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6 mb-4 project-item project-item-hidden">
-                        <div class="card project-card h-100"><div class="project-card-img-container" data-bs-toggle="modal" data-bs-target="#projectModal3"><img src="https://via.placeholder.com/800x600/9CB8AC/FFFFFF?text=Website+Projek+3" class="card-img-top" alt="Projek 3"><div class="project-image-overlay"><div class="project-overlay-content"><h5 class="project-overlay-title">Website E-commerce</h5><p class="project-overlay-tech">PHP, MySQL, Bootstrap</p></div></div></div></div>
+                        <div class="card project-card h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/800x600/9CB8AC/FFFFFF?text=Website+Projek+3" class="card-img-top" alt="Website E-commerce">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5 class="project-overlay-title">Website E-commerce</h5>
+                                        <p class="project-overlay-tech">PHP, MySQL, Bootstrap</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6 mb-4 project-item project-item-hidden">
-                        <div class="card project-card h-100"><div class="project-card-img-container" data-bs-toggle="modal" data-bs-target="#projectModal4"><img src="https://via.placeholder.com/800x600/A7C9A7/FFFFFF?text=Website+Projek+4" class="card-img-top" alt="Projek 4"><div class="project-image-overlay"><div class="project-overlay-content"><h5 class="project-overlay-title">Blog Pribadi CMS</h5><p class="project-overlay-tech">WordPress, Elementor</p></div></div></div></div>
+                        <div class="card project-card h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/800x600/A7C9A7/FFFFFF?text=Website+Projek+4" class="card-img-top" alt="Blog Pribadi CMS">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5 class="project-overlay-title">Blog Pribadi CMS</h5>
+                                        <p class="project-overlay-tech">WordPress, Elementor</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="text-center mt-3">
@@ -97,21 +137,65 @@
             <div class="project-category mt-5 pt-4" data-aos="fade-up">
                 <h2 class="section-title text-center">Projek Mobile</h2>
                 <div class="row justify-content-center" id="mobile-projects">
-                     <div class="col-md-4 col-lg-3 mb-4 project-item"> <div class="card project-card project-card--mobile h-100"><div class="project-card-img-container" data-bs-toggle="modal" data-bs-target="#projectModal5"><img src="https://via.placeholder.com/400x800/B2C8BA/FFFFFF?text=Mobile+App+1" class="card-img-top" alt="Projek 5"><div class="project-image-overlay"><div class="project-overlay-content"><h5 class="project-overlay-title">Aplikasi Mobile 1</h5><p class="project-overlay-tech">Flutter, Firebase</p></div></div></div></div>
+                     <div class="col-md-4 col-lg-3 mb-4 project-item">
+                        <div class="card project-card project-card--mobile h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/400x800/B2C8BA/FFFFFF?text=Mobile+App+1" class="card-img-top" alt="Aplikasi Mobile 1">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5 class="project-overlay-title">Aplikasi Mobile 1</h5>
+                                        <p class="project-overlay-tech">Flutter, Firebase</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 col-lg-3 mb-4 project-item"> <div class="card project-card project-card--mobile h-100"><div class="project-card-img-container" data-bs-toggle="modal" data-bs-target="#projectModal6"><img src="https://via.placeholder.com/400x800/9CB8AC/FFFFFF?text=Mobile+App+2" class="card-img-top" alt="Projek 6"><div class="project-image-overlay"><div class="project-overlay-content"><h5 class="project-overlay-title">Aplikasi Mobile 2</h5><p class="project-overlay-tech">Flutter, Dart</p></div></div></div></div>
+                    <div class="col-md-4 col-lg-3 mb-4 project-item">
+                        <div class="card project-card project-card--mobile h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/400x800/9CB8AC/FFFFFF?text=Mobile+App+2" class="card-img-top" alt="Aplikasi Mobile 2">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5 class="project-overlay-title">Aplikasi Mobile 2</h5>
+                                        <p class="project-overlay-tech">Flutter, Dart</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 col-lg-3 mb-4 project-item project-item-hidden"> <div class="card project-card project-card--mobile h-100"><div class="project-card-img-container" data-bs-toggle="modal" data-bs-target="#projectModal7"><img src="https://via.placeholder.com/400x800/A7C9A7/FFFFFF?text=Mobile+App+3" class="card-img-top" alt="Projek 7"><div class="project-image-overlay"><div class="project-overlay-content"><h5 class="project-overlay-title">Aplikasi Mobile 3</h5><p class="project-overlay-tech">Flutter</p></div></div></div></div>
+                    <div class="col-md-4 col-lg-3 mb-4 project-item project-item-hidden">
+                        <div class="card project-card project-card--mobile h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/400x800/A7C9A7/FFFFFF?text=Mobile+App+3" class="card-img-top" alt="Aplikasi Mobile 3">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5 class="project-overlay-title">Aplikasi Mobile 3</h5>
+                                                                                <p class="project-overlay-tech">Flutter</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 col-lg-3 mb-4 project-item project-item-hidden"> <div class="card project-card project-card--mobile h-100"><div class="project-card-img-container" data-bs-toggle="modal" data-bs-target="#projectModal8"><img src="https://via.placeholder.com/400x800/8FBC8F/FFFFFF?text=Mobile+App+4" class="card-img-top" alt="Projek 8"><div class="project-image-overlay"><div class="project-overlay-content"><h5 class="project-overlay-title">Aplikasi Mobile 4</h5><p class="project-overlay-tech">Flutter, API</p></div></div></div></div>
+                    <div class="col-md-4 col-lg-3 mb-4 project-item project-item-hidden">
+                        <div class="card project-card project-card--mobile h-100">
+                            <div class="project-card-img-container">
+                                <img src="https://via.placeholder.com/400x800/8FBC8F/FFFFFF?text=Mobile+App+4" class="card-img-top" alt="Aplikasi Mobile 4">
+                                <div class="project-image-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5 class="project-overlay-title">Aplikasi Mobile 4</h5>
+                                        <p class="project-overlay-tech">Flutter, API</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                  </div>
         </div>
     </section>
-    
+
     <section class="cta-section text-white text-center py-5">
-        
+
         <div class="falling-icons-container" aria-hidden="true">
             <i class="falling-icon bi bi-filetype-html"></i>
             <i class="falling-icon bi bi-filetype-css"></i>

@@ -22,9 +22,9 @@
 /* Base styles for image container */
 .project-card-img-container {
     overflow: hidden;
-    height: 250px; /* Tinggi default untuk gambar web */
+    height: 300px; /* Tinggi default untuk gambar web - Ditingkatkan lagi */
     position: relative;
-    cursor: pointer;
+    cursor: default; /* Changed to default since no click action */
     background-color: var(--lighter-background);
 }
 
@@ -38,7 +38,7 @@
 
 /* Specific styles for Mobile project cards */
 .project-card--mobile .project-card-img-container {
-    height: 450px; /* Dipertahankan tinggi untuk rasio vertikal yang kuat dengan lebar yang lebih kecil */
+    height: 490px; /* Dipertahankan tinggi untuk rasio vertikal yang kuat dengan lebar yang lebih kecil */
 }
 
 .project-card--mobile .card-img-top {
@@ -127,7 +127,7 @@
 }
 
 
-/* Modal specific styles */
+/* Modal specific styles - kept for structure but properties changed for transparency/blur in zoom modal */
 .modal-content {
     border-radius: 10px;
     border: none;
@@ -169,22 +169,26 @@
     color: var(--dark-text);
 }
 
-.carousel-item img {
-    border-radius: 8px;
-    max-height: 450px;
-    object-fit: contain;
-    margin: auto;
+/* Thumbnail Styles for project modals (now unused as modals are removed) */
+.project-thumbnails .thumbnail-img {
+    /* These styles are no longer active as modals are removed */
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    max-height: 120px;
+    width: auto;
+    object-fit: cover;
 }
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(var(--dark-text-rgb), 0.5);
-    border-radius: 50%;
-    padding: 1.2rem;
-    background-size: 50% 50%;
+
+.project-thumbnails .thumbnail-img:hover {
+    /* These styles are no longer active as modals are removed */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--sage-green-darker);
 }
-.carousel-indicators [data-bs-target] {
-    background-color: var(--sage-green);
-}
+
+
+/* NO CAROUSEL STYLES NEEDED */
 
 .project-github-link {
     display: inline-flex;
@@ -220,15 +224,15 @@
     .project-card--mobile .project-card-img-container {
         height: 350px; /* Reduced height for better proportion on small screens */
     }
-    .project-item { 
+    .project-item {
         margin-bottom: 1.5rem;
-    }
-    .modal-body {
-        padding: 1rem 1.25rem;
     }
     .modal-title {
         font-size: 1.3rem;
     }
+    /* .project-thumbnails .thumbnail-img { */
+        /* max-height: 80px; */ /* Lebih kecil di mobile */
+    /* } */
 }
 
 /* [BARU] Aturan untuk mengubah ukuran hero-section di halaman projek */
@@ -237,3 +241,43 @@
     padding: 6rem 0; /* Menggunakan padding dari .page-header yang asli */
     margin-bottom: 2.5rem; /* Menggunakan margin dari .page-header yang asli */
 }
+
+/* Styles for Image Zoom Modal (these are now effectively unused as modal is removed) */
+/* #imageZoomModal .modal-content.zoomed-image-modal-content {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(10px) brightness(0.7) !important;
+    -webkit-backdrop-filter: blur(10px) brightness(0.7) !important;
+}
+
+#imageZoomModal .modal-backdrop {
+    background-color: transparent !important;
+}
+
+#imageZoomModal .modal-header {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+#imageZoomModal .modal-header .btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#imageZoomModal .modal-header .btn-close-white:hover {
+    opacity: 1;
+}
+
+#imageZoomModal .modal-body {
+    padding: 1rem;
+}
+
+#imageZoomModal #zoomedImage {
+    max-width: 100%;
+    max-height: 90vh;
+    display: block;
+    margin: auto;
+} */
