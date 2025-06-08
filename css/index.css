@@ -7,7 +7,11 @@
     color: var(--white);
     position: relative;
     overflow: hidden;
+    border-radius: 12px;
+    margin: 1rem auto 2.5rem; /* Reduced top margin */
+    max-width: calc(100% - 2rem);
 }
+
 
 /* Optional: Add subtle shapes or patterns to hero */
 .hero-section::before {
@@ -81,18 +85,17 @@
 
 
 /* Quick About Section (index.html) */
-/* NEW: Container for profile image with overlay */
 .profile-img-container-home {
     position: relative;
-    width: 380px; /* Increased default width */
-    height: 380px; /* Increased default height */
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto; /* Center the container */
-    box-shadow: 0 8px 25px var(--shadow-color); /* Maintain shadow on container */
-    border: 6px solid rgba(var(--sage-green-rgb), 0.3); /* Maintain border on container */
+    margin: 0 auto;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    border: 6px solid rgba(var(--sage-green-rgb), 0.3);
     transition: transform var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing), border-color var(--transition-speed) var(--transition-easing);
-    cursor: pointer; /* Change cursor on hover for the whole container */
+    cursor: pointer;
 }
 
 .profile-img-home {
@@ -101,39 +104,35 @@
     object-fit: cover;
     border-radius: 50%;
     transition: transform 0.5s var(--transition-easing), filter 0.5s var(--transition-easing);
-    /* Remove box-shadow and border from img, they are now on container */
-    /* Remove direct transform from img, handled by container hover and overlay */
 }
 
 .profile-img-container-home:hover {
-    transform: scale(1.05); /* Slight scale on hover, no rotate */
+    transform: scale(1.05);
     box-shadow: 0 12px 35px var(--shadow-color-hover), 0 0 0 10px rgba(var(--sage-green-rgb), 0.1);
     border-color: rgba(var(--sage-green-rgb), 0.5);
 }
 
 .profile-img-container-home:hover .profile-img-home {
-    filter: brightness(0.8) blur(1px); /* Slightly less fade and blur */
+    filter: brightness(0.8) blur(1px);
 }
 
-
-/* NEW: Styles for Profile Overlay */
 .profile-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.7); /* Slightly opaque white background */
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     display: flex;
-    flex-direction: column; /* Arrange content vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.5s var(--transition-easing);
     text-align: center;
     padding: 1rem;
-    pointer-events: none; /* Allow interaction with elements inside the overlay like buttons */
+    pointer-events: none;
 }
 
 .profile-img-container-home:hover .profile-overlay {
@@ -146,48 +145,26 @@
     transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
     text-align: center;
     color: var(--dark-text);
-    pointer-events: auto; /* Re-enable pointer events for content inside */
+    pointer-events: auto;
 }
 
 .profile-img-container-home:hover .profile-overlay-content {
-    transform: translateY(0); /* No transform on hover to keep it straight */
+    transform: translateY(0);
     opacity: 1;
 }
 
 .profile-overlay-text {
-    font-size: 1.2rem; /* Slightly larger for main lines */
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 0.3rem; /* Spacing between lines */
+    margin-bottom: 0.3rem;
     line-height: 1.3;
 }
 .profile-overlay-text:last-child {
     margin-bottom: 0;
-    font-size: 1rem; /* Slightly larger for the last line */
+    font-size: 1rem;
     font-weight: 500;
     color: var(--muted-text);
 }
-
-/* Styling for the contact button inside the profile overlay */
-.profile-contact-btn {
-    background-color: var(--sage-green-darker);
-    color: var(--white);
-    border-color: var(--sage-green-darker);
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    margin-top: 1rem; /* Space from text above */
-    display: inline-block; /* Ensure button behaves correctly */
-    pointer-events: auto; /* Make sure the button is clickable */
-}
-
-.profile-contact-btn:hover {
-    background-color: var(--white);
-    color: var(--sage-green-darker);
-    border-color: var(--sage-green-darker);
-    transform: translateY(-2px); /* Slight lift on hover */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
 
 /* Skills and Tools Section (index.html) */
 .skill-tool-card {
@@ -201,7 +178,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--light-sage-accent);
+    border: 1px solid #dee2e6;
 }
 .skill-tool-card:hover {
     transform: translateY(-8px) scale(1.03);
@@ -214,7 +191,6 @@
     transition: color var(--transition-speed) var(--transition-easing);
 }
 
-/* Aturan ukuran untuk ikon SVG */
 svg.skill-tool-icon {
     width: 2.8rem;
     height: 2.8rem;
@@ -231,12 +207,6 @@ svg.skill-tool-icon {
     line-height: 1.3;
 }
 
-/* Memperbesar sub-judul di section keahlian */
-#skills-and-tools .accent-heading {
-    font-size: 1.7rem;
-    margin-bottom: 1.5rem;
-}
-
 /* =================================================================== */
 /* GAYA TOMBOL HERO SECTION                                            */
 /* =================================================================== */
@@ -246,7 +216,6 @@ svg.skill-tool-icon {
     font-weight: 600;
 }
 
-/* Tombol Primer ("Lihat Projek Saya") */
 .hero-section .btn-custom-primary,
 .hero-section .btn-custom-primary:focus {
     background-color: transparent;
@@ -262,7 +231,6 @@ svg.skill-tool-icon {
     transform: translateY(-6px) scale(1.02);
 }
 
-/* Tombol Sekunder ("Tentang Saya") */
 .hero-section .btn-custom-secondary,
 .hero-section .btn-custom-secondary:focus {
     background-color: var(--white);
@@ -282,12 +250,10 @@ svg.skill-tool-icon {
 @media (max-width: 991.98px) {
     .hero-title { font-size: 2.8rem !important; }
     .hero-subtitle { font-size: 1.2rem !important; }
-    /* Adjusted responsive size for profile image container */
-    .profile-img-container-home { width: 320px; height: 320px; } /* Adjust size */
+    .profile-img-container-home { width: 320px; height: 320px; }
     .profile-overlay-text { font-size: 1.1rem; }
     .profile-overlay-text:last-child { font-size: 0.9rem; }
-    .profile-contact-btn { font-size: 0.8rem; padding: 0.5rem 1rem; }
-
+    
     .skill-tool-icon { font-size: 2.5rem; }
     svg.skill-tool-icon { width: 2.5rem; height: 2.5rem; }
     .skill-tool-name { font-size: 0.8rem; }
@@ -297,14 +263,10 @@ svg.skill-tool-icon {
     .hero-section { min-height: 70vh; }
     .hero-title { font-size: 2.2rem !important; }
     .hero-subtitle { font-size: 1rem !important; max-width: 90%; }
-    /* Further adjusted responsive size for profile image container */
     .profile-img-container-home { width: 250px; height: 250px; margin-bottom: 1.5rem; }
     .profile-overlay-text { font-size: 1rem; }
     .profile-overlay-text:last-child { font-size: 0.85rem; }
-    .profile-contact-btn { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
 
-    #quick-about .col-lg-6 { text-align: center; }
-    #quick-about .section-title.text-start::after { margin-left: auto; margin-right: auto; }
     .skill-tool-card { padding: 1rem 0.5rem; }
     .skill-tool-icon { font-size: 2.2rem; }
     svg.skill-tool-icon { width: 2.2rem; height: 2.2rem; }
@@ -313,10 +275,7 @@ svg.skill-tool-icon {
     .hero-section .btn-custom-secondary.ms-md-3 { margin-left: 0 !important; }
 }
 
-/* =================================================================== */
-/* WARNA IKON KEAHLIAN DAN TOOLS                                       */
-/* =================================================================== */
-/* Ini adalah definisi warna untuk ikon, akan digunakan oleh falling-icon juga */
+/* WARNA IKON KEAHLIAN DAN TOOLS */
 .icon-scrum { color: #007bff; }
 .icon-agile { color: #28a745; }
 .icon-html { color: #E34F26; }
@@ -331,7 +290,6 @@ svg.skill-tool-icon {
 .icon-vscode { color: #007ACC; }
 .icon-android-studio { color: #3DDC84; }
 
-/* Mengatur warna hover untuk skill-tool-card tetap sama */
 .skill-tool-card:hover .skill-tool-icon.icon-scrum { color: #007bff; }
 .skill-tool-card:hover .skill-tool-icon.icon-agile { color: #28a745; }
 .skill-tool-card:hover .skill-tool-icon.icon-html { color: #E34F26; }
@@ -347,9 +305,7 @@ svg.skill-tool-icon {
 .skill-tool-card:hover .skill-tool-icon.icon-android-studio { color: #3DDC84; }
 
 
-/* =================================================================== */
-/* EFEK IKON BERJATUHAN PADA HERO SECTION, PROJECTS, DAN CTA         */
-/* =================================================================== */
+/* EFEK IKON BERJATUHAN */
 .falling-icons-container {
   position: absolute;
   top: 0;
@@ -357,16 +313,14 @@ svg.skill-tool-icon {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0; /* Pastikan z-index lebih rendah dari konten */
-  pointer-events: none; /* Penting: agar tidak mengganggu interaksi mouse dengan konten di atasnya */
+  z-index: 0;
+  pointer-events: none;
 }
 
 .falling-icon {
   position: absolute;
-  top: -15%; /* Mulai dari atas layar */
-  /* Mengembalikan warna ikon menjadi putih transparan seperti permintaan */
+  top: -15%;
   color: rgba(255, 255, 255, 0.25); 
-  /* Opacity tambahan jika diperlukan, tapi rgba(255,255,255,0.25) sudah menangani transparansi */
   animation: fall linear infinite;
   user-select: none;
 }
@@ -377,30 +331,38 @@ svg.skill-tool-icon {
 }
 
 /* Variasi animasi untuk setiap ikon agar terlihat acak */
-.falling-icon:nth-child(1) { left: 5%; font-size: 1.5rem; animation-duration: 22s; animation-delay: -5s; }
-.falling-icon:nth-child(2) { left: 10%; font-size: 2.5rem; animation-duration: 18s; animation-delay: -2s; }
-.falling-icon:nth-child(3) { left: 15%; font-size: 1.2rem; animation-duration: 28s; animation-delay: -10s; }
-.falling-icon:nth-child(4) { left: 20%; font-size: 2rem; animation-duration: 15s; animation-delay: -18s; }
-.falling-icon:nth-child(5) { left: 25%; font-size: 1.8rem; animation-duration: 25s; animation-delay: -9s; }
-.falling-icon:nth-child(6) { left: 35%; font-size: 2.8rem; animation-duration: 14s; animation-delay: -3s; }
-.falling-icon:nth-child(7) { left: 45%; font-size: 1.4rem; animation-duration: 26s; animation-delay: -1s; }
-.falling-icon:nth-child(8) { left: 55%; font-size: 2.2rem; animation-duration: 17s; animation-delay: -8s; }
-.falling-icon:nth-child(9) { left: 65%; font-size: 3rem; animation-duration: 20s; animation-delay: -4s; }
-.falling-icon:nth-child(10) { left: 75%; font-size: 1.6rem; animation-duration: 23s; animation-delay: -12s; }
-.falling-icon:nth-child(11) { left: 80%; font-size: 2.4rem; animation-duration: 16s; animation-delay: -15s; }
-.falling-icon:nth-child(12) { left: 85%; font-size: 1.3rem; animation-duration: 30s; animation-delay: -6s; }
-.falling-icon:nth-child(13) { left: 90%; font-size: 2rem; animation-duration: 19s; animation-delay: -20s; }
-.falling-icon:nth-child(14) { left: 60%; font-size: 1.8rem; animation-duration: 24s; animation-delay: -14s; }
-.falling-icon:nth-child(15) { left: 40%; font-size: 2.6rem; animation-duration: 21s; animation-delay: -7s; }
-.falling-icon:nth-child(16) { left: 50%; font-size: 1.5rem; animation-duration: 27s; animation-delay: -17s; }
-.falling-icon:nth-child(17) { left: 70%; font-size: 2.3rem; animation-duration: 18s; animation-delay: -19s; }
-.falling-icon:nth-child(18) { left: 30%; font-size: 1.9rem; animation-duration: 22s; animation-delay: -1s; }
-.falling-icon:nth-child(19) { left: 22%; font-size: 2.7rem; animation-duration: 19s; animation-delay: -13s; }
-.falling-icon:nth-child(20) { left: 88%; font-size: 1.7rem; animation-duration: 26s; animation-delay: -9s; }
+.falling-icon:nth-child(1) { left: 2%; font-size: 1.5rem; animation-duration: 22s; animation-delay: -5s; }
+.falling-icon:nth-child(2) { left: 5%; font-size: 2.5rem; animation-duration: 18s; animation-delay: -2s; }
+.falling-icon:nth-child(3) { left: 10%; font-size: 1.2rem; animation-duration: 28s; animation-delay: -10s; }
+.falling-icon:nth-child(4) { left: 15%; font-size: 2rem; animation-duration: 15s; animation-delay: -18s; }
+.falling-icon:nth-child(5) { left: 20%; font-size: 1.8rem; animation-duration: 25s; animation-delay: -9s; }
+.falling-icon:nth-child(6) { left: 25%; font-size: 2.8rem; animation-duration: 14s; animation-delay: -3s; }
+.falling-icon:nth-child(7) { left: 30%; font-size: 1.4rem; animation-duration: 26s; animation-delay: -1s; }
+.falling-icon:nth-child(8) { left: 35%; font-size: 2.2rem; animation-duration: 17s; animation-delay: -8s; }
+.falling-icon:nth-child(9) { left: 40%; font-size: 3rem; animation-duration: 20s; animation-delay: -4s; }
+.falling-icon:nth-child(10) { left: 45%; font-size: 1.6rem; animation-duration: 23s; animation-delay: -12s; }
+.falling-icon:nth-child(11) { left: 50%; font-size: 2.4rem; animation-duration: 16s; animation-delay: -15s; }
+.falling-icon:nth-child(12) { left: 55%; font-size: 1.3rem; animation-duration: 30s; animation-delay: -6s; }
+.falling-icon:nth-child(13) { left: 60%; font-size: 2rem; animation-duration: 19s; animation-delay: -20s; }
+.falling-icon:nth-child(14) { left: 65%; font-size: 1.8rem; animation-duration: 24s; animation-delay: -14s; }
+.falling-icon:nth-child(15) { left: 70%; font-size: 2.6rem; animation-duration: 21s; animation-delay: -7s; }
+.falling-icon:nth-child(16) { left: 75%; font-size: 1.5rem; animation-duration: 27s; animation-delay: -17s; }
+.falling-icon:nth-child(17) { left: 80%; font-size: 2.3rem; animation-duration: 18s; animation-delay: -19s; }
+.falling-icon:nth-child(18) { left: 85%; font-size: 1.9rem; animation-duration: 22s; animation-delay: -1s; }
+.falling-icon:nth-child(19) { left: 90%; font-size: 2.7rem; animation-duration: 19s; animation-delay: -13s; }
+.falling-icon:nth-child(20) { left: 95%; font-size: 1.7rem; animation-duration: 26s; animation-delay: -9s; }
+.falling-icon:nth-child(21) { left: 7%; font-size: 2.1rem; animation-duration: 29s; animation-delay: -16s; }
+.falling-icon:nth-child(22) { left: 12%; font-size: 1.4rem; animation-duration: 16s; animation-delay: -4s; }
+.falling-icon:nth-child(23) { left: 18%; font-size: 2.6rem; animation-duration: 23s; animation-delay: -8s; }
+.falling-icon:nth-child(24) { left: 28%; font-size: 1.7rem; animation-duration: 18s; animation-delay: -11s; }
+.falling-icon:nth-child(25) { left: 38%; font-size: 2.9rem; animation-duration: 26s; animation-delay: -6s; }
+.falling-icon:nth-child(26) { left: 48%; font-size: 1.5rem; animation-duration: 13s; animation-delay: -2s; }
+.falling-icon:nth-child(27) { left: 58%; font-size: 2.3rem; animation-duration: 27s; animation-delay: -14s; }
+.falling-icon:nth-child(28) { left: 68%; font-size: 1.8rem; animation-duration: 21s; animation-delay: -19s; }
+.falling-icon:nth-child(29) { left: 78%; font-size: 2.8rem; animation-duration: 24s; animation-delay: -3s; }
+.falling-icon:nth-child(30) { left: 88%; font-size: 1.6rem; animation-duration: 19s; animation-delay: -13s; }
 
-/* =================================================================== */
-/* EFEK KUCING MENGINTIP & PERBAIKAN BUG GETAR                         */
-/* =================================================================== */
+/* EFEK KUCING MENGINTIP & PERBAIKAN BUG GETAR */
 .btn-peek {
     position: relative;
     overflow: visible;
@@ -420,48 +382,34 @@ svg.skill-tool-icon {
 
 .btn-peek:hover::after {
     opacity: 1;
-    transform: translateX(-50%) translateY(-95%); /* [DISESUAIKAN] Posisi akhir kucing sedikit lebih rendah */
+    transform: translateX(-50%) translateY(-95%);
 }
 
-/* Tombol di Section "Quick About" untuk perbaikan bug getar */
-#quick-about .btn {
+section .btn {
     border-width: 2px;
     border-style: solid; 
 }
 
-#quick-about .btn-custom-primary,
-#quick-about .btn-custom-primary:focus {
+section .btn-custom-primary,
+section .btn-custom-primary:focus {
     background: var(--sage-green-darker);
     border-color: var(--sage-green-darker);
     color: var(--white);
     transform: none;
 }
 
-#quick-about .btn-custom-primary:hover {
+section .btn-custom-primary:hover {
     background: var(--white);
     border-color: var(--sage-green-darker);
     color: var(--sage-green-darker);
     transform: translateY(-4px);
 }
 
-#quick-about .btn-custom-outline,
-#quick-about .btn-custom-outline:focus {
+section .btn-custom-outline,
+section .btn-custom-outline:focus {
     transform: none;
 }
-#quick-about .btn-custom-outline:hover {
+section .btn-custom-outline:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 15px rgba(var(--sage-green-rgb), 0.2);
-}
-
-/* =================================================================== */
-/* GAYA TOMBOL CTA (CALL TO ACTION) SECTION                            */
-/* =================================================================== */
-/* State awal tombol "Kontak Saya" */
-.cta-section .btn-custom-light {
-    color: #8FBC8F; /* Warna hijau tua dari gradien hero */
-}
-
-/* State hover tombol "Kontak Saya" */
-.cta-section .btn-custom-light:hover {
-    color: var(--white); /* Memastikan teks menjadi putih saat hover */
 }
