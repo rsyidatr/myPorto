@@ -524,7 +524,8 @@ section {
 }
 
 .project-card-img-container {
-    height: 350px;
+    height: 300px;
+    width: 100%;
     overflow: hidden;
     position: relative;
     cursor: default;
@@ -540,12 +541,12 @@ section {
 }
 
 .project-card--mobile .project-card-img-container {
-    height: 490px;
+    height: 500px;
 }
 
 .project-card--mobile .card-img-top {
-    object-fit: contain;
-    padding: 1rem;
+    object-fit:fill;
+    padding: 3px;
 }
 
 .project-card:hover .card-img-top {
