@@ -299,13 +299,12 @@ section {
     z-index: 2;
 }
 
-/* NEW CONTACT SECTION STYLES */
+/* CONTACT SECTION STYLES */
 .contact-content-section .contact-info-item {
     margin-bottom: 1rem;
 }
 .contact-content-section .contact-icon {
-    font-size: 2.8rem;
-    color: var(--sage-green-darker);
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     display: inline-block;
 }
@@ -320,28 +319,63 @@ section {
     color: var(--sage-green-darker);
     text-decoration: underline;
 }
+
+/* Embossed Effect & Brand Colors for Main Contact Icons */
+.contact-content-section .contact-icon i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.05);
+    background-color: #f8f9fa;
+    transition: all var(--transition-speed) var(--transition-easing);
+}
+.contact-content-section .contact-icon i:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.contact-content-section .contact-icon-email {
+    color: #c71610; /* Email Red */
+}
+.contact-content-section .contact-icon-whatsapp {
+    color: #25D366; /* WhatsApp Green */
+}
+.contact-content-section .contact-icon-location {
+    color: #EA4335; /* Location Red */
+}
+
+/* Social Media Icons in Contact Section */
 .contact-content-section .social-icons-contact .social-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    background-color: #f8f9fa; /* Lighter gray for icons */
-    color: var(--sage-green-darker);
-    font-size: 1.5rem;
+    color: var(--white);
+    font-size: 1.8rem;
     text-decoration: none;
     transition: all var(--transition-speed) var(--transition-easing);
     margin: 0 0.5rem;
-    border: 1px solid #dee2e6;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
 }
-
 .contact-content-section .social-icons-contact .social-icon:hover {
-    background-color: var(--sage-green);
-    color: var(--white);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px var(--shadow-color-hover);
-    border-color: var(--sage-green);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    filter: brightness(1.1);
+}
+.contact-content-section .social-icon.social-linkedin {
+    background-color: #0077B5;
+}
+.contact-content-section .social-icon.social-github {
+    background-color: #181717;
+}
+.contact-content-section .social-icon.social-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
 
 

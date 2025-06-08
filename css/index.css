@@ -186,19 +186,16 @@
 }
 
 .skill-tool-icon {
-    font-size: 2.8rem;
-    margin-bottom: 0.75rem;
-    transition: color var(--transition-speed) var(--transition-easing);
-}
-
-.skill-tool-icon.bi-figma {
     width: 2.8rem;
     height: 2.8rem;
+    margin-bottom: 0.75rem;
+    transition: color var(--transition-speed) var(--transition-easing);
 }
 
 .skill-tool-card:hover .skill-tool-icon {
     color: var(--sage-green);
 }
+
 .skill-tool-name {
     font-weight: 500;
     color: var(--dark-text);
@@ -254,8 +251,7 @@
     .profile-overlay-text { font-size: 1.1rem; }
     .profile-overlay-text:last-child { font-size: 0.9rem; }
     
-    .skill-tool-icon { font-size: 2.5rem; }
-    .skill-tool-icon.bi-figma { width: 2.5rem; height: 2.5rem; }
+    .skill-tool-icon { width: 2.5rem; height: 2.5rem; }
     .skill-tool-name { font-size: 0.8rem; }
 }
 
@@ -268,8 +264,7 @@
     .profile-overlay-text:last-child { font-size: 0.85rem; }
 
     .skill-tool-card { padding: 1rem 0.5rem; }
-    .skill-tool-icon { font-size: 2.2rem; }
-    .skill-tool-icon.bi-figma { width: 2.2rem; height: 2.2rem; }
+    .skill-tool-icon { width: 2.2rem; height: 2.2rem; }
     .skill-tool-name { font-size: 0.75rem; }
     .hero-section .btn-custom-primary, .hero-section .btn-custom-secondary { margin-bottom: 0.5rem; width: auto; display: inline-block; }
     .hero-section .btn-custom-secondary.ms-md-3 { margin-left: 0 !important; }
