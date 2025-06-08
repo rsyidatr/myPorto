@@ -155,4 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Initialize Bootstrap tooltips for project icons
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 });

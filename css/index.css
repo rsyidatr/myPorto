@@ -184,14 +184,14 @@
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 10px 30px var(--shadow-color-hover);
 }
+
 .skill-tool-icon {
     font-size: 2.8rem;
-    color: var(--sage-green-darker);
     margin-bottom: 0.75rem;
     transition: color var(--transition-speed) var(--transition-easing);
 }
 
-svg.skill-tool-icon {
+.skill-tool-icon.bi-figma {
     width: 2.8rem;
     height: 2.8rem;
 }
@@ -255,7 +255,7 @@ svg.skill-tool-icon {
     .profile-overlay-text:last-child { font-size: 0.9rem; }
     
     .skill-tool-icon { font-size: 2.5rem; }
-    svg.skill-tool-icon { width: 2.5rem; height: 2.5rem; }
+    .skill-tool-icon.bi-figma { width: 2.5rem; height: 2.5rem; }
     .skill-tool-name { font-size: 0.8rem; }
 }
 
@@ -269,13 +269,14 @@ svg.skill-tool-icon {
 
     .skill-tool-card { padding: 1rem 0.5rem; }
     .skill-tool-icon { font-size: 2.2rem; }
-    svg.skill-tool-icon { width: 2.2rem; height: 2.2rem; }
+    .skill-tool-icon.bi-figma { width: 2.2rem; height: 2.2rem; }
     .skill-tool-name { font-size: 0.75rem; }
     .hero-section .btn-custom-primary, .hero-section .btn-custom-secondary { margin-bottom: 0.5rem; width: auto; display: inline-block; }
     .hero-section .btn-custom-secondary.ms-md-3 { margin-left: 0 !important; }
 }
 
 /* WARNA IKON KEAHLIAN DAN TOOLS */
+/* This now applies to Skills section AND Project Cards */
 .icon-scrum { color: #007bff; }
 .icon-agile { color: #28a745; }
 .icon-html { color: #E34F26; }
@@ -289,20 +290,11 @@ svg.skill-tool-icon {
 .icon-figma { color: #F24E1E; }
 .icon-vscode { color: #007ACC; }
 .icon-android-studio { color: #3DDC84; }
-
-.skill-tool-card:hover .skill-tool-icon.icon-scrum { color: #007bff; }
-.skill-tool-card:hover .skill-tool-icon.icon-agile { color: #28a745; }
-.skill-tool-card:hover .skill-tool-icon.icon-html { color: #E34F26; }
-.skill-tool-card:hover .skill-tool-icon.icon-css { color: #1572B6; }
-.skill-tool-card:hover .skill-tool-icon.icon-js { color: #F7DF1E; }
-.skill-tool-card:hover .skill-tool-icon.icon-flutter { color: #027DFD; }
-.skill-tool-card:hover .skill-tool-icon.icon-bootstrap { color: #7952B3; }
-.skill-tool-card:hover .skill-tool-icon.icon-tailwind { color: #06B6D4; }
-.skill-tool-card:hover .skill-tool-icon.icon-git { color: #F05032; }
-.skill-tool-card:hover .skill-tool-icon.icon-github { color: #181717; }
-.skill-tool-card:hover .skill-tool-icon.icon-figma { color: #F24E1E; }
-.skill-tool-card:hover .skill-tool-icon.icon-vscode { color: #007ACC; }
-.skill-tool-card:hover .skill-tool-icon.icon-android-studio { color: #3DDC84; }
+.icon-php { color: #777BB4; }
+.icon-database, .icon-server { color: #00758F; } /* MySQL Color */
+.icon-npm, .icon-box-seam { color: #CB3837; }
+.icon-react { color: #61DAFB; }
+.icon-node { color: #339933; }
 
 
 /* EFEK IKON BERJATUHAN */
