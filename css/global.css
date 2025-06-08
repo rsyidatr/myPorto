@@ -321,30 +321,22 @@ section {
 }
 
 /* Embossed Effect & Brand Colors for Main Contact Icons */
-.contact-content-section .contact-icon i {
+.contact-content-section .contact-icon .contact-image-icon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
-    padding: 1rem;
+    width: 80px;
+    height: 80px;
+    padding: 1.2rem;
     border-radius: 50%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.05);
     background-color: #f8f9fa;
     transition: all var(--transition-speed) var(--transition-easing);
+    object-fit: contain;
 }
-.contact-content-section .contact-icon i:hover {
+.contact-content-section .contact-icon .contact-image-icon:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-.contact-content-section .contact-icon-email {
-    color: #c71610; /* Email Red */
-}
-.contact-content-section .contact-icon-whatsapp {
-    color: #25D366; /* WhatsApp Green */
-}
-.contact-content-section .contact-icon-location {
-    color: #EA4335; /* Location Red */
 }
 
 /* Social Media Icons in Contact Section */
@@ -643,7 +635,7 @@ section {
     gap: 1.25rem;
 }
 
-.tech-icons .bi, .tech-icons svg {
+.tech-icons .bi, .tech-icons svg, .tech-icons .tech-icon {
     font-size: 1.8rem;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -654,7 +646,7 @@ section {
     height: 1.8rem;
 }
 
-.tech-icons .bi:hover, .tech-icons svg:hover {
+.tech-icons .bi:hover, .tech-icons svg:hover, .tech-icons .tech-icon:hover {
     transform: scale(1.2);
 }
 

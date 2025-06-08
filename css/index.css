@@ -188,8 +188,13 @@
 .skill-tool-icon {
     width: 2.8rem;
     height: 2.8rem;
+    font-size: 2.5rem;
+    line-height: 1;
     margin-bottom: 0.75rem;
     transition: color var(--transition-speed) var(--transition-easing);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skill-tool-card:hover .skill-tool-icon {
@@ -251,7 +256,7 @@
     .profile-overlay-text { font-size: 1.1rem; }
     .profile-overlay-text:last-child { font-size: 0.9rem; }
     
-    .skill-tool-icon { width: 2.5rem; height: 2.5rem; }
+    .skill-tool-icon { width: 2.5rem; height: 2.5rem; font-size: 2.2rem; }
     .skill-tool-name { font-size: 0.8rem; }
 }
 
@@ -264,7 +269,7 @@
     .profile-overlay-text:last-child { font-size: 0.85rem; }
 
     .skill-tool-card { padding: 1rem 0.5rem; }
-    .skill-tool-icon { width: 2.2rem; height: 2.2rem; }
+    .skill-tool-icon { width: 2.2rem; height: 2.2rem; font-size: 2rem; }
     .skill-tool-name { font-size: 0.75rem; }
     .hero-section .btn-custom-primary, .hero-section .btn-custom-secondary { margin-bottom: 0.5rem; width: auto; display: inline-block; }
     .hero-section .btn-custom-secondary.ms-md-3 { margin-left: 0 !important; }
@@ -307,9 +312,14 @@
 .falling-icon {
   position: absolute;
   top: -15%;
-  color: rgba(255, 255, 255, 0.25); 
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.25;
   animation: fall linear infinite;
   user-select: none;
+}
+
+img.falling-icon {
+    transform: scale(1.25);
 }
 
 @keyframes fall {
@@ -318,36 +328,36 @@
 }
 
 /* Variasi animasi untuk setiap ikon agar terlihat acak */
-.falling-icon:nth-child(1) { left: 2%; font-size: 1.5rem; animation-duration: 22s; animation-delay: -5s; }
-.falling-icon:nth-child(2) { left: 5%; font-size: 2.5rem; animation-duration: 18s; animation-delay: -2s; }
-.falling-icon:nth-child(3) { left: 10%; font-size: 1.2rem; animation-duration: 28s; animation-delay: -10s; }
-.falling-icon:nth-child(4) { left: 15%; font-size: 2rem; animation-duration: 15s; animation-delay: -18s; }
-.falling-icon:nth-child(5) { left: 20%; font-size: 1.8rem; animation-duration: 25s; animation-delay: -9s; }
-.falling-icon:nth-child(6) { left: 25%; font-size: 2.8rem; animation-duration: 14s; animation-delay: -3s; }
-.falling-icon:nth-child(7) { left: 30%; font-size: 1.4rem; animation-duration: 26s; animation-delay: -1s; }
-.falling-icon:nth-child(8) { left: 35%; font-size: 2.2rem; animation-duration: 17s; animation-delay: -8s; }
-.falling-icon:nth-child(9) { left: 40%; font-size: 3rem; animation-duration: 20s; animation-delay: -4s; }
-.falling-icon:nth-child(10) { left: 45%; font-size: 1.6rem; animation-duration: 23s; animation-delay: -12s; }
-.falling-icon:nth-child(11) { left: 50%; font-size: 2.4rem; animation-duration: 16s; animation-delay: -15s; }
-.falling-icon:nth-child(12) { left: 55%; font-size: 1.3rem; animation-duration: 30s; animation-delay: -6s; }
-.falling-icon:nth-child(13) { left: 60%; font-size: 2rem; animation-duration: 19s; animation-delay: -20s; }
-.falling-icon:nth-child(14) { left: 65%; font-size: 1.8rem; animation-duration: 24s; animation-delay: -14s; }
-.falling-icon:nth-child(15) { left: 70%; font-size: 2.6rem; animation-duration: 21s; animation-delay: -7s; }
-.falling-icon:nth-child(16) { left: 75%; font-size: 1.5rem; animation-duration: 27s; animation-delay: -17s; }
-.falling-icon:nth-child(17) { left: 80%; font-size: 2.3rem; animation-duration: 18s; animation-delay: -19s; }
-.falling-icon:nth-child(18) { left: 85%; font-size: 1.9rem; animation-duration: 22s; animation-delay: -1s; }
-.falling-icon:nth-child(19) { left: 90%; font-size: 2.7rem; animation-duration: 19s; animation-delay: -13s; }
-.falling-icon:nth-child(20) { left: 95%; font-size: 1.7rem; animation-duration: 26s; animation-delay: -9s; }
-.falling-icon:nth-child(21) { left: 7%; font-size: 2.1rem; animation-duration: 29s; animation-delay: -16s; }
-.falling-icon:nth-child(22) { left: 12%; font-size: 1.4rem; animation-duration: 16s; animation-delay: -4s; }
-.falling-icon:nth-child(23) { left: 18%; font-size: 2.6rem; animation-duration: 23s; animation-delay: -8s; }
-.falling-icon:nth-child(24) { left: 28%; font-size: 1.7rem; animation-duration: 18s; animation-delay: -11s; }
-.falling-icon:nth-child(25) { left: 38%; font-size: 2.9rem; animation-duration: 26s; animation-delay: -6s; }
-.falling-icon:nth-child(26) { left: 48%; font-size: 1.5rem; animation-duration: 13s; animation-delay: -2s; }
-.falling-icon:nth-child(27) { left: 58%; font-size: 2.3rem; animation-duration: 27s; animation-delay: -14s; }
-.falling-icon:nth-child(28) { left: 68%; font-size: 1.8rem; animation-duration: 21s; animation-delay: -19s; }
-.falling-icon:nth-child(29) { left: 78%; font-size: 2.8rem; animation-duration: 24s; animation-delay: -3s; }
-.falling-icon:nth-child(30) { left: 88%; font-size: 1.6rem; animation-duration: 19s; animation-delay: -13s; }
+.falling-icon:nth-child(1) { left: 2%; font-size: 1.5rem; width: 1.5rem; height: 1.5rem; animation-duration: 22s; animation-delay: -5s; }
+.falling-icon:nth-child(2) { left: 5%; font-size: 2.5rem; width: 2.5rem; height: 2.5rem; animation-duration: 18s; animation-delay: -2s; }
+.falling-icon:nth-child(3) { left: 10%; font-size: 1.2rem; width: 1.2rem; height: 1.2rem; animation-duration: 28s; animation-delay: -10s; }
+.falling-icon:nth-child(4) { left: 15%; font-size: 2rem; width: 2rem; height: 2rem; animation-duration: 15s; animation-delay: -18s; }
+.falling-icon:nth-child(5) { left: 20%; font-size: 1.8rem; width: 1.8rem; height: 1.8rem; animation-duration: 25s; animation-delay: -9s; }
+.falling-icon:nth-child(6) { left: 25%; font-size: 2.8rem; width: 2.8rem; height: 2.8rem; animation-duration: 14s; animation-delay: -3s; }
+.falling-icon:nth-child(7) { left: 30%; font-size: 1.4rem; width: 1.4rem; height: 1.4rem; animation-duration: 26s; animation-delay: -1s; }
+.falling-icon:nth-child(8) { left: 35%; font-size: 2.2rem; width: 2.2rem; height: 2.2rem; animation-duration: 17s; animation-delay: -8s; }
+.falling-icon:nth-child(9) { left: 40%; font-size: 3rem; width: 3rem; height: 3rem; animation-duration: 20s; animation-delay: -4s; }
+.falling-icon:nth-child(10) { left: 45%; font-size: 1.6rem; width: 1.6rem; height: 1.6rem; animation-duration: 23s; animation-delay: -12s; }
+.falling-icon:nth-child(11) { left: 50%; font-size: 2.4rem; width: 2.4rem; height: 2.4rem; animation-duration: 16s; animation-delay: -15s; }
+.falling-icon:nth-child(12) { left: 55%; font-size: 1.3rem; width: 1.3rem; height: 1.3rem; animation-duration: 30s; animation-delay: -6s; }
+.falling-icon:nth-child(13) { left: 60%; font-size: 2rem; width: 2rem; height: 2rem; animation-duration: 19s; animation-delay: -20s; }
+.falling-icon:nth-child(14) { left: 65%; font-size: 1.8rem; width: 1.8rem; height: 1.8rem; animation-duration: 24s; animation-delay: -14s; }
+.falling-icon:nth-child(15) { left: 70%; font-size: 2.6rem; width: 2.6rem; height: 2.6rem; animation-duration: 21s; animation-delay: -7s; }
+.falling-icon:nth-child(16) { left: 75%; font-size: 1.5rem; width: 1.5rem; height: 1.5rem; animation-duration: 27s; animation-delay: -17s; }
+.falling-icon:nth-child(17) { left: 80%; font-size: 2.3rem; width: 2.3rem; height: 2.3rem; animation-duration: 18s; animation-delay: -19s; }
+.falling-icon:nth-child(18) { left: 85%; font-size: 1.9rem; width: 1.9rem; height: 1.9rem; animation-duration: 22s; animation-delay: -1s; }
+.falling-icon:nth-child(19) { left: 90%; font-size: 2.7rem; width: 2.7rem; height: 2.7rem; animation-duration: 19s; animation-delay: -13s; }
+.falling-icon:nth-child(20) { left: 95%; font-size: 1.7rem; width: 1.7rem; height: 1.7rem; animation-duration: 26s; animation-delay: -9s; }
+.falling-icon:nth-child(21) { left: 7%; font-size: 2.1rem; width: 2.1rem; height: 2.1rem; animation-duration: 29s; animation-delay: -16s; }
+.falling-icon:nth-child(22) { left: 12%; font-size: 1.4rem; width: 1.4rem; height: 1.4rem; animation-duration: 16s; animation-delay: -4s; }
+.falling-icon:nth-child(23) { left: 18%; font-size: 2.6rem; width: 2.6rem; height: 2.6rem; animation-duration: 23s; animation-delay: -8s; }
+.falling-icon:nth-child(24) { left: 28%; font-size: 1.7rem; width: 1.7rem; height: 1.7rem; animation-duration: 18s; animation-delay: -11s; }
+.falling-icon:nth-child(25) { left: 38%; font-size: 2.9rem; width: 2.9rem; height: 2.9rem; animation-duration: 26s; animation-delay: -6s; }
+.falling-icon:nth-child(26) { left: 48%; font-size: 1.5rem; width: 1.5rem; height: 1.5rem; animation-duration: 13s; animation-delay: -2s; }
+.falling-icon:nth-child(27) { left: 58%; font-size: 2.3rem; width: 2.3rem; height: 2.3rem; animation-duration: 27s; animation-delay: -14s; }
+.falling-icon:nth-child(28) { left: 68%; font-size: 1.8rem; width: 1.8rem; height: 1.8rem; animation-duration: 21s; animation-delay: -19s; }
+.falling-icon:nth-child(29) { left: 78%; font-size: 2.8rem; width: 2.8rem; height: 2.8rem; animation-duration: 24s; animation-delay: -3s; }
+.falling-icon:nth-child(30) { left: 88%; font-size: 1.6rem; width: 1.6rem; height: 1.6rem; animation-duration: 19s; animation-delay: -13s; }
 
 /* EFEK KUCING MENGINTIP & PERBAIKAN BUG GETAR */
 .btn-peek {
