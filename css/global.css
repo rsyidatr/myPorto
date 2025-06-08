@@ -299,74 +299,104 @@ section {
     z-index: 2;
 }
 
-/* CONTACT SECTION STYLES */
-.contact-content-section .contact-info-item {
-    margin-bottom: 1rem;
-}
-.contact-content-section .contact-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: inline-block;
-}
-.contact-content-section .contact-link {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--dark-text);
+/* CONTACT SECTION STYLES (REVISED) */
+.contact-card-link {
+    display: block;
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-.contact-content-section .contact-link:hover {
-    color: var(--sage-green-darker);
-    text-decoration: underline;
+    color: inherit;
+    transition: transform var(--transition-speed) var(--transition-easing);
 }
 
-/* Embossed Effect & Brand Colors for Main Contact Icons */
-.contact-content-section .contact-icon .contact-image-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    padding: 1.2rem;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.05);
+.contact-card-link:hover {
+    transform: translateY(-8px);
+}
+
+.contact-icon-wrapper {
+    position: relative;
     background-color: #f8f9fa;
-    transition: all var(--transition-speed) var(--transition-easing);
-    object-fit: contain;
-}
-.contact-content-section .contact-icon .contact-image-icon:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    max-width: 130px;
+    margin: 0 auto;
 }
 
-/* Social Media Icons in Contact Section */
-.contact-content-section .social-icons-contact .social-icon {
-    display: inline-flex;
+.contact-icon-wrapper.has-green-border {
+    border: 3px solid var(--sage-green-darker);
+}
+
+.contact-image-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 2.2rem;
+    transition: filter var(--transition-speed) var(--transition-easing), transform var(--transition-speed) var(--transition-easing);
+}
+
+/* Styling for Social Icons (i tag) */
+.contact-image-icon.social {
+    padding: 0; /* Override padding for font icons */
+    font-size: 3.5rem;
+    color: var(--white);
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
+}
+
+.contact-info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--dark-text-rgb), 0.85);
     color: var(--white);
-    font-size: 1.8rem;
-    text-decoration: none;
-    transition: all var(--transition-speed) var(--transition-easing);
-    margin: 0 0.5rem;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity var(--transition-speed) var(--transition-easing);
+    padding: 1rem;
 }
-.contact-content-section .social-icons-contact .social-icon:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    filter: brightness(1.1);
+
+.contact-icon-wrapper:hover .contact-image-icon {
+    filter: blur(4px);
+    transform: scale(1.1);
 }
-.contact-content-section .social-icon.social-linkedin {
+
+.contact-icon-wrapper:hover .contact-info-overlay {
+    opacity: 1;
+}
+
+.contact-info-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--sage-green);
+    margin-bottom: 0.25rem;
+}
+
+.contact-info-detail {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    word-break: break-all;
+}
+
+/* Social Media Icon Backgrounds */
+.contact-icon-wrapper.social-linkedin {
     background-color: #0077B5;
 }
-.contact-content-section .social-icon.social-github {
+.contact-icon-wrapper.social-github {
     background-color: #181717;
 }
-.contact-content-section .social-icon.social-instagram {
+.contact-icon-wrapper.social-instagram {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
 
