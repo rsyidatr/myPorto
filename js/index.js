@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const typedTextPrefixElement = document.getElementById('typed-text-prefix');
 
     if (typedTextElement && typedTextPrefixElement) {
-        const name = "Syida"; // Nama Anda
+        const name = "Rasyidatur Rahma"; // Nama Anda
         const prefix = "Hai, saya "; // Teks prefix
         let charIndex = 0;
         let prefixCharIndex = 0;
